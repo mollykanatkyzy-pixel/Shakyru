@@ -8,8 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Marck+Script&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -24,162 +23,21 @@ html{
 }
 
 body{
-  background:#eee5d8;
-  color:#4a3127;
+  margin:0;
   overflow-x:hidden;
-  font-family:'Cormorant Garamond',serif;
+  background:#f3ece3;
+  color:#4b342c;
+  font-family:'Cormorant Garamond', serif;
 }
 
-/* ======================
-   1. БАСТЫ ЭКРАН
-====================== */
-
-.hero{
-  height:100svh;
-  min-height:700px;
-  position:relative;
-
-  background:
-  linear-gradient(
-    to bottom,
-    rgba(20,5,0,.12),
-    rgba(20,5,0,.20),
-    rgba(20,5,0,.55)
-  ),
-  url("IMG_1870.jpeg");
-
-  background-size:cover;
-  background-position:center;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  color:#fff;
-  overflow:hidden;
-}
-
-.hero:before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:
-  radial-gradient(
-    circle at center,
-    transparent 20%,
-    rgba(0,0,0,.22) 100%
-  );
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  width:100%;
-  padding:20px;
-  transform:translateY(-5vh);
-}
-
-.hero-small{
-  font-family:'Montserrat',sans-serif;
-  font-size:13px;
-  letter-spacing:7px;
-  text-transform:uppercase;
-
-  opacity:0;
-  transform:translateY(25px);
-
-  animation:fadeUp 1.4s ease forwards .4s;
-}
-
-.hero-name{
-  font-family:'Marck Script',cursive;
-  font-size:clamp(85px,22vw,155px);
-  font-weight:400;
-  line-height:.85;
-
-  margin-top:22px;
-
-  text-shadow:
-  0 3px 12px rgba(0,0,0,.35),
-  0 10px 40px rgba(0,0,0,.28);
-
-  opacity:0;
-  transform:scale(.75);
-  filter:blur(12px);
-
-  animation:nameReveal 2s cubic-bezier(.2,.8,.2,1)
-  forwards 1s;
-}
-
-.hero-line{
-  width:0;
-  height:1px;
-  background:rgba(255,255,255,.85);
-
-  margin:34px auto 25px;
-
-  animation:lineOpen 1.4s ease forwards 2.2s;
-}
-
-.hero-event{
-  font-family:'Montserrat',sans-serif;
-  font-size:15px;
-  letter-spacing:9px;
-
-  opacity:0;
-  transform:translateY(25px);
-
-  animation:fadeUp 1.4s ease forwards 2.4s;
-}
-
-.scroll-down{
-  position:absolute;
-  bottom:28px;
-  left:50%;
-  transform:translateX(-50%);
-  z-index:3;
-
-  text-align:center;
-
-  opacity:0;
-  animation:fade 1.2s ease forwards 3.5s;
-}
-
-.scroll-down span{
-  font-family:'Montserrat',sans-serif;
-  font-size:9px;
-  letter-spacing:3px;
-}
-
-.arrow{
-  font-size:25px;
-  margin-top:7px;
-  animation:bounce 1.4s infinite;
-}
-
-/* ======================
-   ОБЩИЕ СЕКЦИИ
-====================== */
-
-.section{
-  min-height:100svh;
-  position:relative;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:80px 22px;
-}
+/* АНИМАЦИЯ */
 
 .reveal{
   opacity:0;
-  transform:translateY(45px);
+  transform:translateY(55px);
   transition:
-  opacity 1.2s ease,
-  transform 1.2s ease;
+    opacity 1.2s ease,
+    transform 1.2s ease;
 }
 
 .reveal.show{
@@ -187,416 +45,807 @@ body{
   transform:translateY(0);
 }
 
+
 /* ======================
-   2. ШАҚЫРУ МӘТІНІ
+   1 — БАСТЫ БЕТ
 ====================== */
 
-.invitation{
-  background:
-  radial-gradient(circle at 10% 10%,rgba(255,255,255,.8),transparent 35%),
-  linear-gradient(135deg,#e8dac7,#cbb59c);
-}
-
-.paper{
+.hero{
   position:relative;
-  width:min(92%,600px);
-
-  background:#f7f0e6;
-
-  padding:
-  80px
-  32px
-  90px;
-
-  text-align:center;
-
-  box-shadow:
-  0 20px 55px rgba(63,38,22,.18);
-
-  clip-path:polygon(
-    0 3%,
-    6% 1%,
-    12% 3%,
-    18% 1%,
-    26% 3%,
-    34% 1%,
-    43% 2%,
-    51% 0,
-    60% 2%,
-    68% 1%,
-    77% 3%,
-    86% 1%,
-    94% 3%,
-    100% 1%,
-
-    99% 96%,
-    93% 98%,
-    86% 96%,
-    78% 99%,
-    69% 97%,
-    60% 99%,
-    50% 97%,
-    41% 99%,
-    32% 97%,
-    23% 99%,
-    14% 96%,
-    7% 98%,
-    0 96%
-  );
-}
-
-.paper:after{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background-image:
-  repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 4px,
-    rgba(80,50,30,.015) 5px
-  );
-
-  pointer-events:none;
-}
-
-.ornament{
-  font-size:30px;
-  margin-bottom:25px;
-  opacity:.65;
-}
-
-.inv-title{
-  font-size:31px;
-  letter-spacing:2px;
-  font-weight:600;
-  margin-bottom:28px;
-}
-
-.inv-text{
-  font-size:26px;
-  line-height:1.55;
-}
-
-.inv-name{
-  font-family:'Marck Script',cursive;
-  font-size:50px;
-  color:#8f3c32;
-}
-
-.saukele-decoration{
-  position:absolute;
-  right:-5%;
-  bottom:-20px;
-
-  width:135px;
-  opacity:.14;
-
-  font-size:125px;
-  transform:rotate(-8deg);
-}
-
-/* ======================
-   3. МЕКЕНЖАЙ
-====================== */
-
-.location{
-  background:
-  linear-gradient(
-    rgba(75,27,23,.92),
-    rgba(51,19,17,.96)
-  );
-
-  color:#f8eee3;
-
-  text-align:center;
-}
-
-.location-content{
-  max-width:600px;
-}
-
-.location-label{
-  font-family:'Montserrat',sans-serif;
-  font-size:12px;
-  letter-spacing:6px;
-  margin-bottom:30px;
-}
-
-.location h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:48px;
-  line-height:1.15;
-  font-weight:500;
-}
-
-.restaurant{
-  font-family:'Marck Script',cursive;
-  font-size:55px;
-  margin-top:10px;
-  color:#e9c2a1;
-}
-
-.address-small{
-  margin-top:22px;
-  font-size:18px;
-  opacity:.8;
-}
-
-.map-button{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-
-  margin-top:42px;
-
-  padding:16px 30px;
-
-  border:1px solid rgba(255,255,255,.55);
-  border-radius:50px;
-
-  text-decoration:none;
-  color:#fff;
-
-  font-family:'Montserrat',sans-serif;
-  font-size:12px;
-  letter-spacing:2px;
-
-  transition:.3s;
-}
-
-.map-button:hover{
-  background:#fff;
-  color:#4b1b17;
-}
-
-/* ======================
-   4. КҮН + КАЛЕНДАРЬ
-====================== */
-
-.date-section{
-  background:
-  radial-gradient(circle at top left,#ead8cf,transparent 42%),
-  linear-gradient(160deg,#c7a08e,#f0dfcf);
-
-  text-align:center;
-}
-
-.date-wrap{
-  width:100%;
-  max-width:650px;
-}
-
-.date-title{
-  font-family:'Marck Script',cursive;
-  font-size:55px;
-  margin-bottom:30px;
-}
-
-.calendar{
-  width:210px;
-  height:230px;
-
-  margin:0 auto;
-
-  background:#fff9f3;
-
-  border-radius:22px;
-
-  box-shadow:
-  0 20px 45px rgba(80,40,28,.18);
-
-  overflow:hidden;
-}
-
-.calendar-top{
-  background:#7e342f;
-  color:white;
-
-  font-family:'Montserrat',sans-serif;
-
-  padding:18px;
-
-  font-size:13px;
-  letter-spacing:3px;
-}
-
-.calendar-body{
-  height:170px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  position:relative;
-}
-
-.day{
-  font-size:100px;
-  line-height:1;
-}
-
-.heart{
-  position:absolute;
-  right:24px;
-  top:28px;
-
-  color:#b3262f;
-  font-size:35px;
-
-  animation:heartBeat 1s infinite;
-}
-
-.full-date{
-  font-size:28px;
-  margin-top:30px;
-}
-
-/* ======================
-   ТАЙМЕР
-====================== */
-
-.timer-title{
-  font-family:'Montserrat',sans-serif;
-  font-size:11px;
-  letter-spacing:4px;
-
-  margin-top:55px;
-  margin-bottom:22px;
-}
-
-.timer{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:9px;
-
-  max-width:480px;
-  margin:auto;
-}
-
-.time-box{
-  background:rgba(255,255,255,.45);
-  backdrop-filter:blur(10px);
-
-  padding:18px 5px;
-  border-radius:16px;
-
-  border:1px solid rgba(255,255,255,.45);
-}
-
-.time-number{
-  display:block;
-  font-size:33px;
-}
-
-.time-label{
-  font-family:'Montserrat',sans-serif;
-  display:block;
-
-  font-size:8px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-
-  margin-top:5px;
-}
-
-/* ======================
-   5. ФИНАЛ
-====================== */
-
-.final{
   min-height:100svh;
 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
   background:
-  linear-gradient(
-    to bottom,
-    rgba(30,10,5,.25),
-    rgba(30,10,5,.8)
-  ),
-  url("IMG_1870.jpeg");
+    linear-gradient(
+      to bottom,
+      rgba(26,8,5,.05),
+      rgba(26,8,5,.17),
+      rgba(26,8,5,.62)
+    ),
+    url("IMG_1870.jpeg");
 
   background-size:cover;
   background-position:center;
 
   color:white;
-
   text-align:center;
+  overflow:hidden;
 }
 
-.final-content{
-  max-width:600px;
-
-  padding:50px 25px;
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
 
   background:
-  rgba(38,15,10,.35);
+    radial-gradient(
+      circle at center,
+      transparent 25%,
+      rgba(0,0,0,.28)
+    );
+}
 
-  backdrop-filter:blur(4px);
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:100%;
+  padding:25px;
+  margin-top:15vh;
+}
+
+.hero-small{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  letter-spacing:7px;
+
+  opacity:0;
+  transform:translateY(25px);
+
+  animation:fadeUp 1.3s ease forwards .3s;
+}
+
+.malika{
+  margin-top:15px;
+
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(105px,28vw,180px);
+  font-weight:400;
+  line-height:.9;
+
+  text-shadow:
+    0 4px 20px rgba(0,0,0,.45);
+
+  opacity:0;
+  filter:blur(12px);
+  transform:scale(.75);
+
+  animation:
+    nameReveal 2s cubic-bezier(.2,.8,.2,1)
+    forwards .9s;
+}
+
+.hero-line{
+  height:1px;
+  width:0;
+
+  margin:30px auto 25px;
+
+  background:rgba(255,255,255,.9);
+
+  animation:
+    lineOpen 1.3s ease forwards 2s;
+}
+
+.hero-event{
+  font-size:23px;
+  letter-spacing:7px;
+
+  opacity:0;
+  transform:translateY(25px);
+
+  animation:
+    fadeUp 1.3s ease forwards 2.1s;
+}
+
+.scroll{
+  position:absolute;
+  z-index:3;
+
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+
+  font-family:'Montserrat',sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+
+  opacity:0;
+  animation:fadeIn 1s ease forwards 3.1s;
+}
+
+.scroll-arrow{
+  margin-top:6px;
+  font-size:27px;
+
+  animation:bounce 1.5s infinite;
+}
+
+
+/* ======================
+   2 — ШАҚЫРУ
+====================== */
+
+.invitation{
+  min-height:100svh;
+  position:relative;
+
+  padding:80px 18px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(255,255,255,.75),
+      transparent 34%
+    ),
+    linear-gradient(
+      145deg,
+      #d8c0a7,
+      #f1e6d8
+    );
+}
+
+.invitation-card{
+  width:min(100%,650px);
+  position:relative;
+}
+
+/* СӘУКЕЛЕ ҰСТАҒАН ҚЫЗ */
+
+.saukele-wrap{
+  width:88%;
+  margin-left:auto;
+
+  position:relative;
+
+  transform:rotate(2deg);
+
+  box-shadow:
+    0 25px 55px rgba(61,37,25,.18);
+}
+
+.saukele-photo{
+  display:block;
+  width:100%;
+  height:480px;
+
+  object-fit:cover;
+  object-position:center;
+
+  border-radius:4px;
+}
+
+/* ЖЫРТЫЛҒАН ҚАҒАЗ */
+
+.paper{
+  position:relative;
+
+  width:92%;
+
+  margin:
+    -100px
+    auto
+    0;
+
+  padding:
+    75px
+    27px
+    70px;
+
+  background:#f8f1e7;
+
+  text-align:center;
+
+  box-shadow:
+    0 18px 50px rgba(70,42,24,.18);
+
+  clip-path:polygon(
+    0 4%,
+    5% 2%,
+    11% 4%,
+    18% 1%,
+    26% 3%,
+    34% 1%,
+    42% 3%,
+    50% 1%,
+    59% 3%,
+    67% 1%,
+    75% 4%,
+    84% 1%,
+    92% 3%,
+    100% 1%,
+
+    99% 96%,
+    93% 98%,
+    85% 96%,
+    77% 99%,
+    68% 97%,
+    59% 99%,
+    50% 97%,
+    41% 99%,
+    31% 97%,
+    22% 99%,
+    14% 96%,
+    6% 99%,
+    0 96%
+  );
+}
+
+.paper::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  pointer-events:none;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 4px,
+      rgba(82,50,32,.018) 5px
+    );
+}
+
+.ornament{
+  font-size:29px;
+  opacity:.55;
+  margin-bottom:25px;
+}
+
+.inv-title{
+  font-size:30px;
+  letter-spacing:2px;
+  font-weight:600;
+  margin-bottom:27px;
+}
+
+.inv-text{
+  font-size:26px;
+  line-height:1.5;
+}
+
+.inv-name{
+  display:block;
+
+  margin:10px 0;
+
+  font-family:'Great Vibes',cursive;
+  font-size:65px;
+  line-height:1;
+
+  color:#883c35;
+}
+
+
+/* ======================
+   3 — МЕКЕНЖАЙ
+====================== */
+
+.location{
+  min-height:100svh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:80px 24px;
+
+  text-align:center;
+  color:#f8eee5;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(170,107,82,.45),
+      transparent 38%
+    ),
+    linear-gradient(
+      155deg,
+      #381615,
+      #6a3029,
+      #401a18
+    );
+}
+
+.location-inner{
+  width:min(100%,600px);
+}
+
+.location-small{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  letter-spacing:6px;
+
+  margin-bottom:35px;
+}
+
+.location-city{
+  font-size:48px;
+  font-weight:500;
+}
+
+.restaurant{
+  margin:15px 0 0;
+
+  font-family:'Great Vibes',cursive;
+  font-size:77px;
+  line-height:1;
+
+  color:#ecc6a7;
+}
+
+.restaurant-small{
+  font-size:29px;
+}
+
+.map-button{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+
+  margin-top:42px;
+
+  padding:17px 30px;
+
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:50px;
+
+  color:white;
+  text-decoration:none;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  letter-spacing:2px;
+
+  transition:.3s;
+}
+
+.map-button:active{
+  background:white;
+  color:#4b201c;
+}
+
+
+/* ======================
+   4 — КАЛЕНДАРЬ
+====================== */
+
+.date-section{
+  min-height:100svh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:80px 18px;
+
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 5% 5%,
+      #f5ded5,
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #c89e8b,
+      #f1e2d5
+    );
+}
+
+.date-inner{
+  width:min(100%,600px);
+}
+
+.date-title{
+  font-family:'Great Vibes',cursive;
+  font-size:68px;
+  font-weight:400;
+
+  margin-bottom:30px;
+}
+
+
+/* КАЛЕНДАРЬ */
+
+.calendar{
+  width:min(100%,400px);
+
+  margin:auto;
+
+  overflow:hidden;
+
+  background:#fffaf5;
+  border-radius:25px;
+
+  box-shadow:
+    0 25px 55px rgba(74,38,29,.18);
+}
+
+.calendar-head{
+  padding:21px;
+
+  background:#74322e;
+  color:white;
+
+  font-size:28px;
+  letter-spacing:5px;
+}
+
+.weekdays,
+.calendar-days{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+}
+
+.weekdays{
+  padding:17px 10px 8px;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:8px;
+  letter-spacing:1px;
+
+  opacity:.55;
+}
+
+.calendar-days{
+  padding:5px 12px 23px;
+}
+
+.calendar-day{
+  height:45px;
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:20px;
+}
+
+.empty{
+  visibility:hidden;
+}
+
+
+/* 14 ЖҮРЕК */
+
+.day14{
+  color:white;
+  font-weight:600;
+}
+
+.heart14{
+  position:absolute;
+  z-index:0;
+
+  width:35px;
+  height:35px;
+
+  left:50%;
+  top:50%;
+
+  background:#b4323b;
+
+  transform:
+    translate(-50%,-45%)
+    rotate(-45deg);
+
+  animation:
+    heartbeat 1s ease-in-out infinite;
+}
+
+.heart14::before,
+.heart14::after{
+  content:"";
+
+  position:absolute;
+
+  width:35px;
+  height:35px;
+
+  background:#b4323b;
+
+  border-radius:50%;
+}
+
+.heart14::before{
+  top:-17px;
+  left:0;
+}
+
+.heart14::after{
+  top:0;
+  left:17px;
+}
+
+.day14 span{
+  position:relative;
+  z-index:2;
+}
+
+
+/* КҮН */
+
+.full-date{
+  margin-top:30px;
+
+  font-size:29px;
+  font-weight:500;
+}
+
+
+/* ======================
+   TIMER
+====================== */
+
+.timer-label-title{
+  margin:
+    48px
+    0
+    18px;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;
+  letter-spacing:5px;
+}
+
+.timer{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+
+  max-width:470px;
+  margin:auto;
+}
+
+.timer-box{
+  padding:18px 4px;
+
+  border-radius:16px;
 
   border:
-  1px solid rgba(255,255,255,.22);
+    1px solid rgba(255,255,255,.55);
+
+  background:
+    rgba(255,255,255,.40);
+
+  backdrop-filter:blur(8px);
+}
+
+.timer-number{
+  display:block;
+  font-size:31px;
+}
+
+.timer-text{
+  display:block;
+
+  margin-top:5px;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:7px;
+  text-transform:uppercase;
+}
+
+
+/* ======================
+   5 — RSVP
+====================== */
+
+.rsvp{
+  min-height:90svh;
+
+  padding:80px 24px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  background:#f7efe6;
+}
+
+.rsvp-inner{
+  width:min(100%,530px);
+}
+
+.rsvp-title{
+  font-family:'Great Vibes',cursive;
+
+  font-size:72px;
+  font-weight:400;
+}
+
+.rsvp-question{
+  margin:
+    17px
+    0
+    38px;
+
+  font-size:25px;
+  line-height:1.4;
+}
+
+.rsvp-button{
+  display:block;
+
+  width:100%;
+
+  margin:12px 0;
+
+  padding:17px 15px;
+
+  background:transparent;
+
+  border:
+    1px solid #713831;
+
+  border-radius:50px;
+
+  color:#5d302a;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:23px;
+
+  transition:.3s;
+}
+
+.rsvp-button.active{
+  background:#713831;
+  color:white;
+}
+
+.answer{
+  min-height:40px;
+
+  margin-top:25px;
+
+  font-size:22px;
+  color:#7c3d36;
+}
+
+
+/* ======================
+   6 — ФИНАЛ
+====================== */
+
+.final{
+  min-height:100svh;
+
+  position:relative;
+
+  padding:70px 20px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:white;
+  text-align:center;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(30,10,5,.20),
+      rgba(30,10,5,.78)
+    ),
+    url("IMG_1876.jpeg");
+
+  background-size:cover;
+  background-position:center;
+}
+
+.final-card{
+  width:min(100%,540px);
+
+  padding:
+    55px
+    22px;
 
   border-radius:30px;
+
+  border:
+    1px solid rgba(255,255,255,.28);
+
+  background:
+    rgba(43,16,12,.38);
+
+  backdrop-filter:blur(5px);
 }
 
 .final-small{
   font-family:'Montserrat',sans-serif;
+  font-size:10px;
   letter-spacing:5px;
-  font-size:11px;
 }
 
-.final h2{
-  font-family:'Marck Script',cursive;
-  font-size:62px;
-  margin:25px 0;
+.final-title{
+  margin:
+    25px
+    0
+    10px;
+
+  font-family:'Great Vibes',cursive;
+  font-size:65px;
+  font-weight:400;
 }
 
 .parents{
-  font-size:35px;
-  line-height:1.3;
+  font-size:42px;
+  line-height:1.18;
 }
 
-.final-heart{
+.final-message{
   margin-top:30px;
-  font-size:30px;
 
-  animation:heartBeat 1.2s infinite;
+  font-size:22px;
+  line-height:1.5;
 }
+
 
 /* ======================
-   АНИМАЦИЯЛАР
+   KEYFRAMES
 ====================== */
 
 @keyframes fadeUp{
+
   to{
     opacity:1;
     transform:translateY(0);
   }
+
 }
 
 @keyframes nameReveal{
+
   to{
     opacity:1;
-    transform:scale(1);
     filter:blur(0);
+    transform:scale(1);
   }
+
 }
 
 @keyframes lineOpen{
+
   to{
-    width:120px;
+    width:125px;
   }
+
 }
 
-@keyframes fade{
+@keyframes fadeIn{
+
   to{
     opacity:1;
   }
+
 }
 
 @keyframes bounce{
+
   0%,100%{
     transform:translateY(0);
   }
@@ -604,36 +853,48 @@ body{
   50%{
     transform:translateY(9px);
   }
+
 }
 
-@keyframes heartBeat{
+@keyframes heartbeat{
 
   0%,100%{
-    transform:scale(1);
+    transform:
+      translate(-50%,-45%)
+      rotate(-45deg)
+      scale(.85);
   }
 
-  20%{
-    transform:scale(1.25);
+  25%{
+    transform:
+      translate(-50%,-45%)
+      rotate(-45deg)
+      scale(1.07);
   }
 
-  40%{
-    transform:scale(1);
+  45%{
+    transform:
+      translate(-50%,-45%)
+      rotate(-45deg)
+      scale(.92);
   }
 
-  60%{
-    transform:scale(1.18);
+  65%{
+    transform:
+      translate(-50%,-45%)
+      rotate(-45deg)
+      scale(1.08);
   }
+
 }
 
-/* PHONE */
+
+/* MOBILE */
 
 @media(max-width:480px){
 
-  .paper{
-    padding:
-    70px
-    23px
-    75px;
+  .saukele-photo{
+    height:430px;
   }
 
   .inv-title{
@@ -641,15 +902,11 @@ body{
   }
 
   .inv-text{
-    font-size:23px;
+    font-size:24px;
   }
 
-  .location h2{
-    font-size:40px;
-  }
-
-  .restaurant{
-    font-size:48px;
+  .location-city{
+    font-size:42px;
   }
 
 }
@@ -657,19 +914,23 @@ body{
 </style>
 </head>
 
+
 <body>
 
-<!-- 1. БАСТЫ ЭКРАН -->
+
+<!-- ======================
+     1 БАСТЫ БЕТ
+====================== -->
 
 <section class="hero">
 
   <div class="hero-content">
 
     <div class="hero-small">
-      Қыз ұзату
+      ҚЫЗ ҰЗАТУ
     </div>
 
-    <h1 class="hero-name">
+    <h1 class="malika">
       Малика
     </h1>
 
@@ -681,13 +942,11 @@ body{
 
   </div>
 
-  <div class="scroll-down">
+  <div class="scroll">
 
-    <span>
-      ТӨМЕН СЫРҒЫТЫҢЫЗ
-    </span>
+    ТӨМЕН СЫРҒЫТЫҢЫЗ
 
-    <div class="arrow">
+    <div class="scroll-arrow">
       ⌄
     </div>
 
@@ -696,35 +955,50 @@ body{
 </section>
 
 
-<!-- 2. ШАҚЫРУ -->
+<!-- ======================
+     2 ШАҚЫРУ
+====================== -->
 
-<section class="section invitation">
+<section class="invitation">
 
-  <div class="paper reveal">
+  <div class="invitation-card">
 
-    <div class="ornament">
-      ❦
+    <div class="saukele-wrap reveal">
+
+      <img
+        src="IMG_1876.jpeg"
+        class="saukele-photo"
+        alt="Малика"
+      >
+
     </div>
 
-    <h2 class="inv-title">
-      ҚҰРМЕТТІ ҚОНАҚТАР!
-    </h2>
 
-    <div class="inv-text">
+    <div class="paper reveal">
 
-      Сіздерді қызымыз
-
-      <div class="inv-name">
-        Маликаның
+      <div class="ornament">
+        ❦
       </div>
 
-      ұзатылу тойына
-      шақырамыз!
+      <h2 class="inv-title">
 
-    </div>
+        ҚҰРМЕТТІ ҚОНАҚТАР!
 
-    <div class="saukele-decoration">
-      ♕
+      </h2>
+
+      <div class="inv-text">
+
+        Сіздерді қызымыз
+
+        <span class="inv-name">
+          Маликаның
+        </span>
+
+        ұзатылу тойына
+        шақырамыз!
+
+      </div>
+
     </div>
 
   </div>
@@ -732,38 +1006,47 @@ body{
 </section>
 
 
-<!-- 3. МЕКЕНЖАЙ -->
+<!-- ======================
+     3 МЕКЕНЖАЙ
+====================== -->
 
-<section class="section location">
+<section class="location">
 
-  <div class="location-content reveal">
+  <div class="location-inner reveal">
 
-    <div class="location-label">
+    <div class="location-small">
+
       МЕКЕН-ЖАЙЫМЫЗ
+
     </div>
 
-    <h2>
-      АТЫРАУ ҚАЛАСЫ
-    </h2>
+    <div class="location-city">
+
+      Атырау қаласы
+
+    </div>
 
     <div class="restaurant">
-      «Анашым»
+
+      Анашым
+
     </div>
 
-    <h2 style="font-size:34px;">
+    <div class="restaurant-small">
+
       мейрамханасы
-    </h2>
 
-    <div class="address-small">
-      Атырау-Доссор трассасы, 70а
     </div>
+
 
     <a
-      class="map-button"
-      href="https://2gis.kz/atyrau/firm/70000001084118332"
+      href="https://2gis.kz/atyrau/search/%D0%90%D0%BD%D0%B0%D1%88%D1%8B%D0%BC"
       target="_blank"
+      class="map-button"
     >
+
       📍 2GIS-ТЕН КӨРУ
+
     </a>
 
   </div>
@@ -771,102 +1054,171 @@ body{
 </section>
 
 
-<!-- 4. КҮН + ТАЙМЕР -->
+<!-- ======================
+     4 КҮН
+====================== -->
 
-<section class="section date-section">
+<section class="date-section">
 
-  <div class="date-wrap reveal">
+  <div class="date-inner reveal">
 
     <h2 class="date-title">
       Той күні
     </h2>
 
+
     <div class="calendar">
 
-      <div class="calendar-top">
-        ҚЫРКҮЙЕК
+      <div class="calendar-head">
+        ҚЫРКҮЙЕК 2026
       </div>
 
-      <div class="calendar-body">
 
-        <div class="day">
-          14
+      <div class="weekdays">
+
+        <div>ДС</div>
+        <div>СС</div>
+        <div>СР</div>
+        <div>БС</div>
+        <div>ЖМ</div>
+        <div>СБ</div>
+        <div>ЖС</div>
+
+      </div>
+
+
+      <div class="calendar-days">
+
+        <div class="calendar-day empty"></div>
+
+        <div class="calendar-day">1</div>
+        <div class="calendar-day">2</div>
+        <div class="calendar-day">3</div>
+        <div class="calendar-day">4</div>
+        <div class="calendar-day">5</div>
+        <div class="calendar-day">6</div>
+
+        <div class="calendar-day">7</div>
+        <div class="calendar-day">8</div>
+        <div class="calendar-day">9</div>
+        <div class="calendar-day">10</div>
+        <div class="calendar-day">11</div>
+        <div class="calendar-day">12</div>
+        <div class="calendar-day">13</div>
+
+
+        <div class="calendar-day day14">
+
+          <div class="heart14"></div>
+
+          <span>
+            14
+          </span>
+
         </div>
 
-        <div class="heart">
-          ♥
-        </div>
+
+        <div class="calendar-day">15</div>
+        <div class="calendar-day">16</div>
+        <div class="calendar-day">17</div>
+        <div class="calendar-day">18</div>
+        <div class="calendar-day">19</div>
+        <div class="calendar-day">20</div>
+
+        <div class="calendar-day">21</div>
+        <div class="calendar-day">22</div>
+        <div class="calendar-day">23</div>
+        <div class="calendar-day">24</div>
+        <div class="calendar-day">25</div>
+        <div class="calendar-day">26</div>
+        <div class="calendar-day">27</div>
+
+        <div class="calendar-day">28</div>
+        <div class="calendar-day">29</div>
+        <div class="calendar-day">30</div>
 
       </div>
 
     </div>
+
 
     <div class="full-date">
+
       14 қыркүйек 2026 жыл
+
     </div>
 
-    <div class="timer-title">
+
+    <div class="timer-label-title">
+
       ТОЙҒА ДЕЙІН
+
     </div>
+
 
     <div class="timer">
 
-      <div class="time-box">
+
+      <div class="timer-box">
 
         <span
           id="days"
-          class="time-number">
+          class="timer-number">
           00
         </span>
 
-        <span class="time-label">
+        <span class="timer-text">
           күн
         </span>
 
       </div>
 
-      <div class="time-box">
+
+      <div class="timer-box">
 
         <span
           id="hours"
-          class="time-number">
+          class="timer-number">
           00
         </span>
 
-        <span class="time-label">
+        <span class="timer-text">
           сағат
         </span>
 
       </div>
 
-      <div class="time-box">
+
+      <div class="timer-box">
 
         <span
           id="minutes"
-          class="time-number">
+          class="timer-number">
           00
         </span>
 
-        <span class="time-label">
+        <span class="timer-text">
           минут
         </span>
 
       </div>
 
-      <div class="time-box">
+
+      <div class="timer-box">
 
         <span
           id="seconds"
-          class="time-number">
+          class="timer-number">
           00
         </span>
 
-        <span class="time-label">
+        <span class="timer-text">
           секунд
         </span>
 
       </div>
 
+
     </div>
 
   </div>
@@ -874,59 +1226,125 @@ body{
 </section>
 
 
-<!-- 5. СОҢЫ -->
+<!-- ======================
+     5 КЕЛЕСІЗ БЕ
+====================== -->
 
-<section class="section final">
+<section class="rsvp">
 
-  <div class="final-content reveal">
+  <div class="rsvp-inner reveal">
 
-    <div class="final-small">
-      ТОЙ ИЕЛЕРІ
-    </div>
+    <h2 class="rsvp-title">
 
-    <h2>
-      Әке-Анасы
+      Келесіз бе?
+
     </h2>
 
-    <div class="parents">
-      Марат
-      <br>
-      &
-      <br>
-      Сандуғаш
+    <div class="rsvp-question">
+
+      Қуанышымызға ортақ
+      бола аласыз ба?
+
     </div>
 
-    <div class="final-heart">
-      ♡
-    </div>
+
+    <button
+      class="rsvp-button"
+      onclick="selectAnswer(this,'Келемін')"
+    >
+
+      ♥ Иә, келемін
+
+    </button>
+
+
+    <button
+      class="rsvp-button"
+      onclick="selectAnswer(this,'Жұбыммен келемін')"
+    >
+
+      ♥ Жұбыммен келемін
+
+    </button>
+
+
+    <button
+      class="rsvp-button"
+      onclick="selectAnswer(this,'Келе алмаймын')"
+    >
+
+      Келе алмаймын
+
+    </button>
+
 
     <div
-      style="
-      margin-top:25px;
-      font-size:20px;
-      line-height:1.6;
-      "
-    >
-      Қуанышымызға ортақ
-      болып, ақ тілектеріңізді
-      арнаңыздар!
+      id="answer"
+      class="answer">
     </div>
 
   </div>
 
 </section>
+
+
+<!-- ======================
+     6 ФИНАЛ
+====================== -->
+
+<section class="final">
+
+  <div class="final-card reveal">
+
+    <div class="final-small">
+
+      ТОЙ ИЕЛЕРІ
+
+    </div>
+
+    <h2 class="final-title">
+
+      Әке-Анасы
+
+    </h2>
+
+
+    <div class="parents">
+
+      Марат
+      <br>
+
+      &
+
+      <br>
+      Сандуғаш
+
+    </div>
+
+
+    <div class="final-message">
+
+      Қуанышымызға ортақ болып,
+      ақ тілектеріңізді арнаңыздар!
+
+    </div>
+
+  </div>
+
+</section>
+
 
 
 <script>
 
-/* SCROLL АНИМАЦИЯ */
+/* SCROLL ANIMATION */
 
-const elements =
+const revealElements =
 document.querySelectorAll(".reveal");
 
 const observer =
 new IntersectionObserver(
-(entries)=>{
+entries=>{
 
   entries.forEach(entry=>{
 
@@ -942,92 +1360,154 @@ new IntersectionObserver(
 
 },
 {
-  threshold:0.22
+  threshold:.18
 }
 );
 
-elements.forEach(el=>{
+revealElements.forEach(el=>{
   observer.observe(el);
 });
 
 
-/* ТАЙМЕР */
+/* TIMER */
 
-const weddingDate =
+const eventTime =
 new Date(
   "2026-09-14T18:00:00+05:00"
 ).getTime();
 
-function updateTimer(){
+
+function timer(){
 
   const now =
   new Date().getTime();
 
-  const distance =
-  weddingDate-now;
+  const difference =
+  eventTime-now;
 
-  if(distance<=0){
+
+  if(difference<=0){
 
     document.querySelector(
       ".timer"
-    ).innerHTML =
-    "<div style='grid-column:1/5;font-size:32px;'>Той күні келді ♥</div>";
+    ).innerHTML=
+      "<div style='grid-column:1/5;font-size:30px;'>Той күні келді ♥</div>";
 
     return;
   }
 
-  const days =
+
+  const d =
   Math.floor(
-    distance/(1000*60*60*24)
+    difference/
+    (1000*60*60*24)
   );
 
-  const hours =
+
+  const h =
   Math.floor(
-    (distance%(1000*60*60*24))
-    /(1000*60*60)
+    (
+      difference%
+      (1000*60*60*24)
+    )/
+    (1000*60*60)
   );
 
-  const minutes =
+
+  const m =
   Math.floor(
-    (distance%(1000*60*60))
-    /(1000*60)
+    (
+      difference%
+      (1000*60*60)
+    )/
+    (1000*60)
   );
 
-  const seconds =
+
+  const s =
   Math.floor(
-    (distance%(1000*60))
-    /1000
+    (
+      difference%
+      (1000*60)
+    )/
+    1000
   );
+
 
   document.getElementById(
     "days"
-  ).textContent=days;
+  ).textContent=d;
+
 
   document.getElementById(
     "hours"
   ).textContent=
-  String(hours).padStart(2,"0");
+    String(h)
+    .padStart(2,"0");
+
 
   document.getElementById(
     "minutes"
   ).textContent=
-  String(minutes).padStart(2,"0");
+    String(m)
+    .padStart(2,"0");
+
 
   document.getElementById(
     "seconds"
   ).textContent=
-  String(seconds).padStart(2,"0");
+    String(s)
+    .padStart(2,"0");
 
 }
 
-updateTimer();
+
+timer();
 
 setInterval(
-  updateTimer,
+  timer,
   1000
 );
 
+
+/* RSVP */
+
+function selectAnswer(
+  button,
+  text
+){
+
+  document
+  .querySelectorAll(
+    ".rsvp-button"
+  )
+  .forEach(btn=>{
+
+    btn
+    .classList
+    .remove("active");
+
+  });
+
+
+  button
+  .classList
+  .add("active");
+
+
+  document
+  .getElementById(
+    "answer"
+  )
+  .innerHTML=
+    "Таңдауыңыз: <b>"+
+    text+
+    "</b> ♥";
+
+}
+
 </script>
+
 
 </body>
 </html>
