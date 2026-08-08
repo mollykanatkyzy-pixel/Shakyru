@@ -1,134 +1,1033 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Тойға шақыру</title>
+<title>Малика — Қыз ұзату</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: #f8f2e8;
-      color: #49392d;
-      text-align: center;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Marck+Script&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-    .page {
-      min-height: 100vh;
-      padding: 70px 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+<style>
 
-    .small {
-      font-size: 17px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    h1 {
-      font-size: 48px;
-      margin: 25px 0 10px;
-      font-weight: normal;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .line {
-      width: 70px;
-      height: 1px;
-      background: #a88a63;
-      margin: 25px auto;
-    }
+body{
+  background:#eee5d8;
+  color:#4a3127;
+  overflow-x:hidden;
+  font-family:'Cormorant Garamond',serif;
+}
 
-    .text {
-      max-width: 500px;
-      font-size: 20px;
-      line-height: 1.7;
-    }
+/* ======================
+   1. БАСТЫ ЭКРАН
+====================== */
 
-    .date {
-      font-size: 30px;
-      margin-top: 30px;
-    }
+.hero{
+  height:100svh;
+  min-height:700px;
+  position:relative;
 
-    .time {
-      font-size: 21px;
-      margin-top: 10px;
-    }
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(20,5,0,.12),
+    rgba(20,5,0,.20),
+    rgba(20,5,0,.55)
+  ),
+  url("IMG_1870.jpeg");
 
-    .place {
-      margin-top: 35px;
-      font-size: 19px;
-      line-height: 1.6;
-    }
+  background-size:cover;
+  background-position:center;
 
-    .button {
-      display: inline-block;
-      margin-top: 35px;
-      padding: 15px 30px;
-      border: 1px solid #8c7254;
-      border-radius: 30px;
-      color: #49392d;
-      text-decoration: none;
-      font-size: 17px;
-    }
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    .heart {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-  </style>
+  color:#fff;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background:
+  radial-gradient(
+    circle at center,
+    transparent 20%,
+    rgba(0,0,0,.22) 100%
+  );
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  width:100%;
+  padding:20px;
+  transform:translateY(-5vh);
+}
+
+.hero-small{
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;
+  letter-spacing:7px;
+  text-transform:uppercase;
+
+  opacity:0;
+  transform:translateY(25px);
+
+  animation:fadeUp 1.4s ease forwards .4s;
+}
+
+.hero-name{
+  font-family:'Marck Script',cursive;
+  font-size:clamp(85px,22vw,155px);
+  font-weight:400;
+  line-height:.85;
+
+  margin-top:22px;
+
+  text-shadow:
+  0 3px 12px rgba(0,0,0,.35),
+  0 10px 40px rgba(0,0,0,.28);
+
+  opacity:0;
+  transform:scale(.75);
+  filter:blur(12px);
+
+  animation:nameReveal 2s cubic-bezier(.2,.8,.2,1)
+  forwards 1s;
+}
+
+.hero-line{
+  width:0;
+  height:1px;
+  background:rgba(255,255,255,.85);
+
+  margin:34px auto 25px;
+
+  animation:lineOpen 1.4s ease forwards 2.2s;
+}
+
+.hero-event{
+  font-family:'Montserrat',sans-serif;
+  font-size:15px;
+  letter-spacing:9px;
+
+  opacity:0;
+  transform:translateY(25px);
+
+  animation:fadeUp 1.4s ease forwards 2.4s;
+}
+
+.scroll-down{
+  position:absolute;
+  bottom:28px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:3;
+
+  text-align:center;
+
+  opacity:0;
+  animation:fade 1.2s ease forwards 3.5s;
+}
+
+.scroll-down span{
+  font-family:'Montserrat',sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+.arrow{
+  font-size:25px;
+  margin-top:7px;
+  animation:bounce 1.4s infinite;
+}
+
+/* ======================
+   ОБЩИЕ СЕКЦИИ
+====================== */
+
+.section{
+  min-height:100svh;
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:80px 22px;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(45px);
+  transition:
+  opacity 1.2s ease,
+  transform 1.2s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ======================
+   2. ШАҚЫРУ МӘТІНІ
+====================== */
+
+.invitation{
+  background:
+  radial-gradient(circle at 10% 10%,rgba(255,255,255,.8),transparent 35%),
+  linear-gradient(135deg,#e8dac7,#cbb59c);
+}
+
+.paper{
+  position:relative;
+  width:min(92%,600px);
+
+  background:#f7f0e6;
+
+  padding:
+  80px
+  32px
+  90px;
+
+  text-align:center;
+
+  box-shadow:
+  0 20px 55px rgba(63,38,22,.18);
+
+  clip-path:polygon(
+    0 3%,
+    6% 1%,
+    12% 3%,
+    18% 1%,
+    26% 3%,
+    34% 1%,
+    43% 2%,
+    51% 0,
+    60% 2%,
+    68% 1%,
+    77% 3%,
+    86% 1%,
+    94% 3%,
+    100% 1%,
+
+    99% 96%,
+    93% 98%,
+    86% 96%,
+    78% 99%,
+    69% 97%,
+    60% 99%,
+    50% 97%,
+    41% 99%,
+    32% 97%,
+    23% 99%,
+    14% 96%,
+    7% 98%,
+    0 96%
+  );
+}
+
+.paper:after{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:
+  repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 4px,
+    rgba(80,50,30,.015) 5px
+  );
+
+  pointer-events:none;
+}
+
+.ornament{
+  font-size:30px;
+  margin-bottom:25px;
+  opacity:.65;
+}
+
+.inv-title{
+  font-size:31px;
+  letter-spacing:2px;
+  font-weight:600;
+  margin-bottom:28px;
+}
+
+.inv-text{
+  font-size:26px;
+  line-height:1.55;
+}
+
+.inv-name{
+  font-family:'Marck Script',cursive;
+  font-size:50px;
+  color:#8f3c32;
+}
+
+.saukele-decoration{
+  position:absolute;
+  right:-5%;
+  bottom:-20px;
+
+  width:135px;
+  opacity:.14;
+
+  font-size:125px;
+  transform:rotate(-8deg);
+}
+
+/* ======================
+   3. МЕКЕНЖАЙ
+====================== */
+
+.location{
+  background:
+  linear-gradient(
+    rgba(75,27,23,.92),
+    rgba(51,19,17,.96)
+  );
+
+  color:#f8eee3;
+
+  text-align:center;
+}
+
+.location-content{
+  max-width:600px;
+}
+
+.location-label{
+  font-family:'Montserrat',sans-serif;
+  font-size:12px;
+  letter-spacing:6px;
+  margin-bottom:30px;
+}
+
+.location h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;
+  line-height:1.15;
+  font-weight:500;
+}
+
+.restaurant{
+  font-family:'Marck Script',cursive;
+  font-size:55px;
+  margin-top:10px;
+  color:#e9c2a1;
+}
+
+.address-small{
+  margin-top:22px;
+  font-size:18px;
+  opacity:.8;
+}
+
+.map-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  margin-top:42px;
+
+  padding:16px 30px;
+
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:50px;
+
+  text-decoration:none;
+  color:#fff;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:12px;
+  letter-spacing:2px;
+
+  transition:.3s;
+}
+
+.map-button:hover{
+  background:#fff;
+  color:#4b1b17;
+}
+
+/* ======================
+   4. КҮН + КАЛЕНДАРЬ
+====================== */
+
+.date-section{
+  background:
+  radial-gradient(circle at top left,#ead8cf,transparent 42%),
+  linear-gradient(160deg,#c7a08e,#f0dfcf);
+
+  text-align:center;
+}
+
+.date-wrap{
+  width:100%;
+  max-width:650px;
+}
+
+.date-title{
+  font-family:'Marck Script',cursive;
+  font-size:55px;
+  margin-bottom:30px;
+}
+
+.calendar{
+  width:210px;
+  height:230px;
+
+  margin:0 auto;
+
+  background:#fff9f3;
+
+  border-radius:22px;
+
+  box-shadow:
+  0 20px 45px rgba(80,40,28,.18);
+
+  overflow:hidden;
+}
+
+.calendar-top{
+  background:#7e342f;
+  color:white;
+
+  font-family:'Montserrat',sans-serif;
+
+  padding:18px;
+
+  font-size:13px;
+  letter-spacing:3px;
+}
+
+.calendar-body{
+  height:170px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+}
+
+.day{
+  font-size:100px;
+  line-height:1;
+}
+
+.heart{
+  position:absolute;
+  right:24px;
+  top:28px;
+
+  color:#b3262f;
+  font-size:35px;
+
+  animation:heartBeat 1s infinite;
+}
+
+.full-date{
+  font-size:28px;
+  margin-top:30px;
+}
+
+/* ======================
+   ТАЙМЕР
+====================== */
+
+.timer-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;
+  letter-spacing:4px;
+
+  margin-top:55px;
+  margin-bottom:22px;
+}
+
+.timer{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px;
+
+  max-width:480px;
+  margin:auto;
+}
+
+.time-box{
+  background:rgba(255,255,255,.45);
+  backdrop-filter:blur(10px);
+
+  padding:18px 5px;
+  border-radius:16px;
+
+  border:1px solid rgba(255,255,255,.45);
+}
+
+.time-number{
+  display:block;
+  font-size:33px;
+}
+
+.time-label{
+  font-family:'Montserrat',sans-serif;
+  display:block;
+
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+
+  margin-top:5px;
+}
+
+/* ======================
+   5. ФИНАЛ
+====================== */
+
+.final{
+  min-height:100svh;
+
+  background:
+  linear-gradient(
+    to bottom,
+    rgba(30,10,5,.25),
+    rgba(30,10,5,.8)
+  ),
+  url("IMG_1870.jpeg");
+
+  background-size:cover;
+  background-position:center;
+
+  color:white;
+
+  text-align:center;
+}
+
+.final-content{
+  max-width:600px;
+
+  padding:50px 25px;
+
+  background:
+  rgba(38,15,10,.35);
+
+  backdrop-filter:blur(4px);
+
+  border:
+  1px solid rgba(255,255,255,.22);
+
+  border-radius:30px;
+}
+
+.final-small{
+  font-family:'Montserrat',sans-serif;
+  letter-spacing:5px;
+  font-size:11px;
+}
+
+.final h2{
+  font-family:'Marck Script',cursive;
+  font-size:62px;
+  margin:25px 0;
+}
+
+.parents{
+  font-size:35px;
+  line-height:1.3;
+}
+
+.final-heart{
+  margin-top:30px;
+  font-size:30px;
+
+  animation:heartBeat 1.2s infinite;
+}
+
+/* ======================
+   АНИМАЦИЯЛАР
+====================== */
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes nameReveal{
+  to{
+    opacity:1;
+    transform:scale(1);
+    filter:blur(0);
+  }
+}
+
+@keyframes lineOpen{
+  to{
+    width:120px;
+  }
+}
+
+@keyframes fade{
+  to{
+    opacity:1;
+  }
+}
+
+@keyframes bounce{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(9px);
+  }
+}
+
+@keyframes heartBeat{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  20%{
+    transform:scale(1.25);
+  }
+
+  40%{
+    transform:scale(1);
+  }
+
+  60%{
+    transform:scale(1.18);
+  }
+}
+
+/* PHONE */
+
+@media(max-width:480px){
+
+  .paper{
+    padding:
+    70px
+    23px
+    75px;
+  }
+
+  .inv-title{
+    font-size:27px;
+  }
+
+  .inv-text{
+    font-size:23px;
+  }
+
+  .location h2{
+    font-size:40px;
+  }
+
+  .restaurant{
+    font-size:48px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <section class="page">
+<!-- 1. БАСТЫ ЭКРАН -->
 
-    <div class="heart">♡</div>
+<section class="hero">
 
-    <div class="small">
-      Сіздерді тойымызға шақырамыз
+  <div class="hero-content">
+
+    <div class="hero-small">
+      Қыз ұзату
     </div>
 
-    <h1>
-      Димаш & Жансая
+    <h1 class="hero-name">
+      Малика
     </h1>
 
-    <div class="line"></div>
+    <div class="hero-line"></div>
 
-    <div class="text">
-      Құрметті ағайын-туыс, құда-жекжат,
-      дос-жарандар!
-      <br><br>
-      Сіздерді қуанышымыздың қадірлі
-      қонағы болуға шақырамыз.
+    <div class="hero-event">
+      ҚЫЗ ҰЗАТУ
     </div>
 
-    <div class="date">
-      12 қыркүйек 2026
+  </div>
+
+  <div class="scroll-down">
+
+    <span>
+      ТӨМЕН СЫРҒЫТЫҢЫЗ
+    </span>
+
+    <div class="arrow">
+      ⌄
     </div>
 
-    <div class="time">
-      сағат 18:00
+  </div>
+
+</section>
+
+
+<!-- 2. ШАҚЫРУ -->
+
+<section class="section invitation">
+
+  <div class="paper reveal">
+
+    <div class="ornament">
+      ❦
     </div>
 
-    <div class="place">
-      Той салтанаты<br>
-      NIET HALL
+    <h2 class="inv-title">
+      ҚҰРМЕТТІ ҚОНАҚТАР!
+    </h2>
+
+    <div class="inv-text">
+
+      Сіздерді қызымыз
+
+      <div class="inv-name">
+        Маликаның
+      </div>
+
+      ұзатылу тойына
+      шақырамыз!
+
     </div>
 
-    <a class="button" href="#">
-      Мекенжайды көру
+    <div class="saukele-decoration">
+      ♕
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 3. МЕКЕНЖАЙ -->
+
+<section class="section location">
+
+  <div class="location-content reveal">
+
+    <div class="location-label">
+      МЕКЕН-ЖАЙЫМЫЗ
+    </div>
+
+    <h2>
+      АТЫРАУ ҚАЛАСЫ
+    </h2>
+
+    <div class="restaurant">
+      «Анашым»
+    </div>
+
+    <h2 style="font-size:34px;">
+      мейрамханасы
+    </h2>
+
+    <div class="address-small">
+      Атырау-Доссор трассасы, 70а
+    </div>
+
+    <a
+      class="map-button"
+      href="https://2gis.kz/atyrau/firm/70000001084118332"
+      target="_blank"
+    >
+      📍 2GIS-ТЕН КӨРУ
     </a>
 
-  </section>
+  </div>
+
+</section>
+
+
+<!-- 4. КҮН + ТАЙМЕР -->
+
+<section class="section date-section">
+
+  <div class="date-wrap reveal">
+
+    <h2 class="date-title">
+      Той күні
+    </h2>
+
+    <div class="calendar">
+
+      <div class="calendar-top">
+        ҚЫРКҮЙЕК
+      </div>
+
+      <div class="calendar-body">
+
+        <div class="day">
+          14
+        </div>
+
+        <div class="heart">
+          ♥
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="full-date">
+      14 қыркүйек 2026 жыл
+    </div>
+
+    <div class="timer-title">
+      ТОЙҒА ДЕЙІН
+    </div>
+
+    <div class="timer">
+
+      <div class="time-box">
+
+        <span
+          id="days"
+          class="time-number">
+          00
+        </span>
+
+        <span class="time-label">
+          күн
+        </span>
+
+      </div>
+
+      <div class="time-box">
+
+        <span
+          id="hours"
+          class="time-number">
+          00
+        </span>
+
+        <span class="time-label">
+          сағат
+        </span>
+
+      </div>
+
+      <div class="time-box">
+
+        <span
+          id="minutes"
+          class="time-number">
+          00
+        </span>
+
+        <span class="time-label">
+          минут
+        </span>
+
+      </div>
+
+      <div class="time-box">
+
+        <span
+          id="seconds"
+          class="time-number">
+          00
+        </span>
+
+        <span class="time-label">
+          секунд
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- 5. СОҢЫ -->
+
+<section class="section final">
+
+  <div class="final-content reveal">
+
+    <div class="final-small">
+      ТОЙ ИЕЛЕРІ
+    </div>
+
+    <h2>
+      Әке-Анасы
+    </h2>
+
+    <div class="parents">
+      Марат
+      <br>
+      &
+      <br>
+      Сандуғаш
+    </div>
+
+    <div class="final-heart">
+      ♡
+    </div>
+
+    <div
+      style="
+      margin-top:25px;
+      font-size:20px;
+      line-height:1.6;
+      "
+    >
+      Қуанышымызға ортақ
+      болып, ақ тілектеріңізді
+      арнаңыздар!
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* SCROLL АНИМАЦИЯ */
+
+const elements =
+document.querySelectorAll(".reveal");
+
+const observer =
+new IntersectionObserver(
+(entries)=>{
+
+  entries.forEach(entry=>{
+
+    if(entry.isIntersecting){
+
+      entry.target
+      .classList
+      .add("show");
+
+    }
+
+  });
+
+},
+{
+  threshold:0.22
+}
+);
+
+elements.forEach(el=>{
+  observer.observe(el);
+});
+
+
+/* ТАЙМЕР */
+
+const weddingDate =
+new Date(
+  "2026-09-14T18:00:00+05:00"
+).getTime();
+
+function updateTimer(){
+
+  const now =
+  new Date().getTime();
+
+  const distance =
+  weddingDate-now;
+
+  if(distance<=0){
+
+    document.querySelector(
+      ".timer"
+    ).innerHTML =
+    "<div style='grid-column:1/5;font-size:32px;'>Той күні келді ♥</div>";
+
+    return;
+  }
+
+  const days =
+  Math.floor(
+    distance/(1000*60*60*24)
+  );
+
+  const hours =
+  Math.floor(
+    (distance%(1000*60*60*24))
+    /(1000*60*60)
+  );
+
+  const minutes =
+  Math.floor(
+    (distance%(1000*60*60))
+    /(1000*60)
+  );
+
+  const seconds =
+  Math.floor(
+    (distance%(1000*60))
+    /1000
+  );
+
+  document.getElementById(
+    "days"
+  ).textContent=days;
+
+  document.getElementById(
+    "hours"
+  ).textContent=
+  String(hours).padStart(2,"0");
+
+  document.getElementById(
+    "minutes"
+  ).textContent=
+  String(minutes).padStart(2,"0");
+
+  document.getElementById(
+    "seconds"
+  ).textContent=
+  String(seconds).padStart(2,"0");
+
+}
+
+updateTimer();
+
+setInterval(
+  updateTimer,
+  1000
+);
+
+</script>
 
 </body>
 </html>
