@@ -31,16 +31,10 @@ body{
   font-family:'Cormorant Garamond',serif;
 }
 
-/* =========================
-   SCROLL ANIMATION
-========================= */
-
 .reveal{
   opacity:0;
   transform:translateY(50px);
-  transition:
-    opacity 1.2s ease,
-    transform 1.2s ease;
+  transition:opacity 1.2s ease, transform 1.2s ease;
 }
 
 .reveal.show{
@@ -48,15 +42,11 @@ body{
   transform:translateY(0);
 }
 
-
-/* =========================
-   1. БАСТЫ БЕТ
-========================= */
+/* 1. БАСТЫ БЕТ */
 
 .hero{
   position:relative;
   min-height:100svh;
-
   display:flex;
   justify-content:center;
   align-items:center;
@@ -94,7 +84,6 @@ body{
 .hero-content{
   position:relative;
   z-index:2;
-
   width:100%;
   padding:20px;
   margin-top:17vh;
@@ -108,8 +97,7 @@ body{
   opacity:0;
   transform:translateY(25px);
 
-  animation:
-    fadeUp 1.4s ease forwards .3s;
+  animation:fadeUp 1.4s ease forwards .3s;
 }
 
 .malika{
@@ -120,8 +108,7 @@ body{
   font-weight:400;
   line-height:.9;
 
-  text-shadow:
-    0 4px 22px rgba(0,0,0,.45);
+  text-shadow:0 4px 22px rgba(0,0,0,.45);
 
   opacity:0;
   filter:blur(12px);
@@ -135,13 +122,10 @@ body{
 .hero-line{
   width:0;
   height:1px;
-
   margin:30px auto 24px;
-
   background:rgba(255,255,255,.88);
 
-  animation:
-    lineOpen 1.4s ease forwards 2s;
+  animation:lineOpen 1.4s ease forwards 2s;
 }
 
 .hero-event{
@@ -151,17 +135,14 @@ body{
   opacity:0;
   transform:translateY(25px);
 
-  animation:
-    fadeUp 1.3s ease forwards 2.1s;
+  animation:fadeUp 1.3s ease forwards 2.1s;
 }
 
 .scroll{
   position:absolute;
   z-index:3;
-
   bottom:28px;
   left:50%;
-
   transform:translateX(-50%);
 
   font-family:'Montserrat',sans-serif;
@@ -169,27 +150,19 @@ body{
   letter-spacing:3px;
 
   opacity:0;
-
-  animation:
-    fadeIn 1.2s ease forwards 3.2s;
+  animation:fadeIn 1.2s ease forwards 3.2s;
 }
 
 .scroll-arrow{
   margin-top:7px;
   font-size:27px;
-
-  animation:
-    bounce 1.5s infinite;
+  animation:bounce 1.5s infinite;
 }
 
-
-/* =========================
-   2. ШАҚЫРУ
-========================= */
+/* 2. ШАҚЫРУ */
 
 .invitation{
   min-height:100svh;
-
   padding:80px 18px;
 
   display:flex;
@@ -217,78 +190,35 @@ body{
 .saukele-wrap{
   width:88%;
   margin-left:auto;
-
   transform:rotate(1.5deg);
-
-  box-shadow:
-    0 25px 55px rgba(61,37,25,.18);
+  box-shadow:0 25px 55px rgba(61,37,25,.18);
 }
 
 .saukele-photo{
   display:block;
-
   width:100%;
   height:470px;
-
   object-fit:cover;
   object-position:center;
-
   border-radius:5px;
 }
 
-/* ЖЫРТЫЛҒАН ҚАҒАЗ */
-
 .paper{
   position:relative;
-
   width:92%;
-
-  margin:
-    -95px
-    auto
-    0;
-
-  padding:
-    75px
-    26px
-    70px;
+  margin:-95px auto 0;
+  padding:75px 26px 70px;
 
   background:#f9f2e8;
-
   text-align:center;
 
-  box-shadow:
-    0 18px 50px rgba(70,42,24,.17);
+  box-shadow:0 18px 50px rgba(70,42,24,.17);
 
   clip-path:polygon(
-    0 4%,
-    6% 2%,
-    13% 4%,
-    20% 1%,
-    28% 3%,
-    36% 1%,
-    44% 3%,
-    52% 1%,
-    60% 3%,
-    68% 1%,
-    76% 4%,
-    84% 1%,
-    92% 3%,
-    100% 1%,
-
-    99% 96%,
-    92% 98%,
-    84% 96%,
-    76% 99%,
-    68% 97%,
-    59% 99%,
-    50% 97%,
-    41% 99%,
-    31% 97%,
-    22% 99%,
-    14% 96%,
-    6% 99%,
-    0 96%
+    0 4%,6% 2%,13% 4%,20% 1%,28% 3%,36% 1%,44% 3%,52% 1%,
+    60% 3%,68% 1%,76% 4%,84% 1%,92% 3%,100% 1%,
+    99% 96%,92% 98%,84% 96%,76% 99%,68% 97%,59% 99%,
+    50% 97%,41% 99%,31% 97%,22% 99%,14% 96%,6% 99%,0 96%
   );
 }
 
@@ -318,7 +248,6 @@ body{
   font-size:31px;
   font-weight:600;
   letter-spacing:2px;
-
   margin-bottom:26px;
 }
 
@@ -329,7 +258,6 @@ body{
 
 .inv-name{
   display:block;
-
   margin:11px 0 8px;
 
   font-family:'Great Vibes',cursive;
@@ -339,14 +267,10 @@ body{
   color:#8b3b34;
 }
 
-
-/* =========================
-   3. МЕКЕНЖАЙ
-========================= */
+/* 3. МЕКЕНЖАЙ */
 
 .location{
   min-height:100svh;
-
   padding:80px 24px;
 
   display:flex;
@@ -378,7 +302,6 @@ body{
   font-family:'Montserrat',sans-serif;
   font-size:10px;
   letter-spacing:6px;
-
   margin-bottom:35px;
 }
 
@@ -389,11 +312,9 @@ body{
 
 .restaurant{
   margin-top:15px;
-
   font-family:'Great Vibes',cursive;
   font-size:77px;
   line-height:1;
-
   color:#ecc7aa;
 }
 
@@ -403,37 +324,28 @@ body{
 
 .map-button{
   display:inline-flex;
-
   justify-content:center;
   align-items:center;
   gap:10px;
 
   margin-top:42px;
-
   padding:17px 30px;
 
-  border:
-    1px solid rgba(255,255,255,.55);
-
+  border:1px solid rgba(255,255,255,.55);
   border-radius:50px;
 
   color:white;
   text-decoration:none;
 
   font-family:'Montserrat',sans-serif;
-
   font-size:11px;
   letter-spacing:2px;
 }
 
-
-/* =========================
-   4. КҮН + КАЛЕНДАРЬ
-========================= */
+/* 4. КҮН + КАЛЕНДАРЬ */
 
 .date-section{
   min-height:100svh;
-
   padding:85px 18px;
 
   display:flex;
@@ -464,7 +376,6 @@ body{
   font-size:9px;
   letter-spacing:5px;
   opacity:.5;
-
   margin-bottom:14px;
 }
 
@@ -474,34 +385,23 @@ body{
   font-size:57px;
   font-weight:500;
   line-height:1;
-
   margin-bottom:35px;
-
   color:#4c302a;
 }
 
-/* КАЛЕНДАРЬ */
-
 .calendar{
   width:min(100%,390px);
-
   margin:auto;
-
   overflow:hidden;
 
   background:#fffaf4;
-
   border-radius:28px;
 
-  box-shadow:
-    0 24px 55px rgba(76,42,31,.16);
+  box-shadow:0 24px 55px rgba(76,42,31,.16);
 }
 
 .calendar-head{
-  padding:
-    22px
-    22px
-    19px;
+  padding:22px 22px 19px;
 
   background:#793630;
   color:#fff;
@@ -532,10 +432,7 @@ body{
 }
 
 .weekdays{
-  padding:
-    18px
-    12px
-    9px;
+  padding:18px 12px 9px;
 
   font-family:'Montserrat',sans-serif;
   font-size:8px;
@@ -545,11 +442,7 @@ body{
 }
 
 .calendar-days{
-  padding:
-    5px
-    13px
-    25px;
-
+  padding:5px 13px 25px;
   row-gap:5px;
 }
 
@@ -572,8 +465,6 @@ body{
   visibility:hidden;
 }
 
-/* 14 КҮНІ */
-
 .special14{
   position:relative;
   font-weight:600;
@@ -589,7 +480,6 @@ body{
 
 .small-heart{
   position:absolute;
-
   top:-7px;
   right:2px;
 
@@ -597,35 +487,25 @@ body{
   font-size:18px;
 
   z-index:3;
-
-  animation:
-    heartPulse 1s ease-in-out infinite;
+  animation:heartPulse 1s ease-in-out infinite;
 }
 
 .full-date{
   margin-top:33px;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:31px;
   font-weight:500;
 
   color:#4c302a;
 }
 
-
-/* =========================
-   TIMER
-========================= */
+/* TIMER */
 
 .timer-label-title{
-  margin:
-    50px
-    0
-    18px;
+  margin:50px 0 18px;
 
   font-family:'Montserrat',sans-serif;
-
   font-size:9px;
   letter-spacing:5px;
 
@@ -644,46 +524,34 @@ body{
 .timer-box{
   padding:17px 4px;
 
-  border:
-    1px solid rgba(255,255,255,.55);
-
+  border:1px solid rgba(255,255,255,.55);
   border-radius:17px;
 
-  background:
-    rgba(255,255,255,.38);
-
+  background:rgba(255,255,255,.38);
   backdrop-filter:blur(8px);
 }
 
 .timer-number{
   display:block;
-
   font-size:30px;
-
   font-family:'Cormorant Garamond',serif;
 }
 
 .timer-text{
   display:block;
-
   margin-top:4px;
 
   font-family:'Montserrat',sans-serif;
-
   font-size:7px;
   letter-spacing:1px;
 
   text-transform:uppercase;
 }
 
-
-/* =========================
-   5. RSVP
-========================= */
+/* 5. RSVP */
 
 .rsvp{
-  min-height:90svh;
-
+  min-height:95svh;
   padding:80px 24px;
 
   display:flex;
@@ -692,7 +560,13 @@ body{
 
   text-align:center;
 
-  background:#f7efe6;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255,255,255,.8),
+      transparent 35%
+    ),
+    #f7efe6;
 }
 
 .rsvp-inner{
@@ -701,42 +575,56 @@ body{
 
 .rsvp-title{
   font-family:'Great Vibes',cursive;
-
   font-size:72px;
   font-weight:400;
 }
 
 .rsvp-question{
-  margin:
-    17px
-    0
-    38px;
-
+  margin:17px 0 28px;
   font-size:25px;
   line-height:1.4;
 }
 
+.guest-input{
+  width:100%;
+  padding:17px 20px;
+  margin-bottom:20px;
+
+  border:1px solid #713831;
+  border-radius:50px;
+
+  background:#fffaf5;
+  color:#5d302a;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+
+  outline:none;
+  text-align:center;
+}
+
+.guest-input::placeholder{
+  color:#9a7b70;
+}
+
 .rsvp-button{
   display:block;
-
   width:100%;
 
   margin:12px 0;
-
   padding:17px 15px;
 
   background:transparent;
 
-  border:
-    1px solid #713831;
-
+  border:1px solid #713831;
   border-radius:50px;
 
   color:#5d302a;
 
   font-family:'Cormorant Garamond',serif;
-
   font-size:23px;
+
+  transition:.3s;
 }
 
 .rsvp-button.active{
@@ -744,23 +632,37 @@ body{
   color:white;
 }
 
+.send-rsvp{
+  display:block;
+  width:100%;
+
+  margin-top:20px;
+  padding:18px 20px;
+
+  border:none;
+  border-radius:50px;
+
+  background:#713831;
+  color:white;
+
+  font-family:'Cormorant Garamond',serif;
+  font-size:23px;
+
+  box-shadow:0 12px 30px rgba(113,56,49,.2);
+}
+
 .answer{
   min-height:40px;
-
-  margin-top:25px;
+  margin-top:24px;
 
   font-size:22px;
   color:#7c3d36;
 }
 
-
-/* =========================
-   6. ФИНАЛ
-========================= */
+/* 6. ФИНАЛ */
 
 .final{
   min-height:100svh;
-
   padding:70px 20px;
 
   display:flex;
@@ -785,36 +687,25 @@ body{
 .final-card{
   width:min(100%,540px);
 
-  padding:
-    55px
-    22px;
+  padding:55px 22px;
 
-  border:
-    1px solid rgba(255,255,255,.28);
-
+  border:1px solid rgba(255,255,255,.28);
   border-radius:30px;
 
-  background:
-    rgba(43,16,12,.38);
-
+  background:rgba(43,16,12,.38);
   backdrop-filter:blur(5px);
 }
 
 .final-small{
   font-family:'Montserrat',sans-serif;
-
   font-size:10px;
   letter-spacing:5px;
 }
 
 .final-title{
-  margin:
-    25px
-    0
-    10px;
+  margin:25px 0 10px;
 
   font-family:'Great Vibes',cursive;
-
   font-size:65px;
   font-weight:400;
 }
@@ -826,15 +717,11 @@ body{
 
 .final-message{
   margin-top:30px;
-
   font-size:22px;
   line-height:1.5;
 }
 
-
-/* =========================
-   KEYFRAMES
-========================= */
+/* KEYFRAMES */
 
 @keyframes fadeUp{
   to{
@@ -891,10 +778,7 @@ body{
   }
 }
 
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:480px){
 
@@ -914,6 +798,10 @@ body{
     font-size:42px;
   }
 
+  .rsvp-title{
+    font-size:64px;
+  }
+
 }
 
 </style>
@@ -921,10 +809,7 @@ body{
 
 <body>
 
-
-<!-- =========================
-     1 БАСТЫ БЕТ
-========================= -->
+<!-- 1 БАСТЫ БЕТ -->
 
 <section class="hero">
 
@@ -947,21 +832,16 @@ body{
   </div>
 
   <div class="scroll">
-
     ТӨМЕН СЫРҒЫТЫҢЫЗ
 
     <div class="scroll-arrow">
       ⌄
     </div>
-
   </div>
 
 </section>
 
-
-<!-- =========================
-     2 ШАҚЫРУ
-========================= -->
+<!-- 2 ШАҚЫРУ -->
 
 <section class="invitation">
 
@@ -1005,10 +885,7 @@ body{
 
 </section>
 
-
-<!-- =========================
-     3 МЕКЕНЖАЙ
-========================= -->
+<!-- 3 МЕКЕНЖАЙ -->
 
 <section class="location">
 
@@ -1042,10 +919,7 @@ body{
 
 </section>
 
-
-<!-- =========================
-     4 КҮН
-========================= -->
+<!-- 4 КҮН -->
 
 <section class="date-section">
 
@@ -1058,7 +932,6 @@ body{
     <h2 class="date-title">
       Той күні
     </h2>
-
 
     <div class="calendar">
 
@@ -1074,7 +947,6 @@ body{
 
       </div>
 
-
       <div class="weekdays">
 
         <div>ДС</div>
@@ -1086,7 +958,6 @@ body{
         <div>ЖС</div>
 
       </div>
-
 
       <div class="calendar-days">
 
@@ -1142,76 +1013,34 @@ body{
 
     </div>
 
-
     <div class="full-date">
       14 қыркүйек 2026 жыл
     </div>
-
 
     <div class="timer-label-title">
       ТОЙҒА ДЕЙІН
     </div>
 
-
     <div class="timer">
 
       <div class="timer-box">
-
-        <span
-          id="days"
-          class="timer-number">
-          00
-        </span>
-
-        <span class="timer-text">
-          күн
-        </span>
-
+        <span id="days" class="timer-number">00</span>
+        <span class="timer-text">күн</span>
       </div>
 
-
       <div class="timer-box">
-
-        <span
-          id="hours"
-          class="timer-number">
-          00
-        </span>
-
-        <span class="timer-text">
-          сағат
-        </span>
-
+        <span id="hours" class="timer-number">00</span>
+        <span class="timer-text">сағат</span>
       </div>
 
-
       <div class="timer-box">
-
-        <span
-          id="minutes"
-          class="timer-number">
-          00
-        </span>
-
-        <span class="timer-text">
-          минут
-        </span>
-
+        <span id="minutes" class="timer-number">00</span>
+        <span class="timer-text">минут</span>
       </div>
 
-
       <div class="timer-box">
-
-        <span
-          id="seconds"
-          class="timer-number">
-          00
-        </span>
-
-        <span class="timer-text">
-          секунд
-        </span>
-
+        <span id="seconds" class="timer-number">00</span>
+        <span class="timer-text">секунд</span>
       </div>
 
     </div>
@@ -1220,10 +1049,7 @@ body{
 
 </section>
 
-
-<!-- =========================
-     5 КЕЛЕСІЗ БЕ
-========================= -->
+<!-- 5 КЕЛЕСІЗ БЕ -->
 
 <section class="rsvp">
 
@@ -1234,20 +1060,23 @@ body{
     </h2>
 
     <div class="rsvp-question">
-
-      Қуанышымызға ортақ
-      бола аласыз ба?
-
+      Қуанышымызға ортақ бола аласыз ба?
     </div>
 
+    <input
+      type="text"
+      id="guestName"
+      class="guest-input"
+      placeholder="Аты-жөніңіз"
+      autocomplete="name"
+    >
 
     <button
       class="rsvp-button"
-      onclick="selectAnswer(this,'Келемін')"
+      onclick="selectAnswer(this,'Иә, келемін')"
     >
       ♥ Иә, келемін
     </button>
-
 
     <button
       class="rsvp-button"
@@ -1256,7 +1085,6 @@ body{
       ♥ Жұбыммен келемін
     </button>
 
-
     <button
       class="rsvp-button"
       onclick="selectAnswer(this,'Келе алмаймын')"
@@ -1264,6 +1092,12 @@ body{
       Келе алмаймын
     </button>
 
+    <button
+      class="send-rsvp"
+      onclick="sendWhatsApp()"
+    >
+      Жауапты жіберу
+    </button>
 
     <div
       id="answer"
@@ -1274,10 +1108,7 @@ body{
 
 </section>
 
-
-<!-- =========================
-     6 ФИНАЛ
-========================= -->
+<!-- 6 ФИНАЛ -->
 
 <section class="final">
 
@@ -1292,36 +1123,25 @@ body{
     </h2>
 
     <div class="parents">
-
       Марат
-
       <br>
-
       &
-
       <br>
-
       Сандуғаш
-
     </div>
 
     <div class="final-message">
-
       Қуанышымызға ортақ болып,
       ақ тілектеріңізді арнаңыздар!
-
     </div>
 
   </div>
 
 </section>
 
-
 <script>
 
-/* =========================
-   SCROLL ANIMATION
-========================= */
+/* SCROLL ANIMATION */
 
 const revealElements =
 document.querySelectorAll(".reveal");
@@ -1353,15 +1173,12 @@ revealElements.forEach(el=>{
 });
 
 
-/* =========================
-   TIMER
-========================= */
+/* TIMER */
 
 const eventTime =
 new Date(
   "2026-09-14T18:00:00+05:00"
 ).getTime();
-
 
 function timer(){
 
@@ -1371,135 +1188,121 @@ function timer(){
   const difference =
   eventTime-now;
 
-
   if(difference<=0){
 
     document
-    .querySelector(
-      ".timer"
-    )
+    .querySelector(".timer")
     .innerHTML=
       "<div style='grid-column:1/5;font-size:30px;'>Той күні келді ♥</div>";
 
     return;
   }
 
-
   const d =
   Math.floor(
-    difference/
-    (1000*60*60*24)
+    difference/(1000*60*60*24)
   );
-
 
   const h =
   Math.floor(
     (
-      difference%
-      (1000*60*60*24)
-    )/
-    (1000*60*60)
+      difference%(1000*60*60*24)
+    )/(1000*60*60)
   );
-
 
   const m =
   Math.floor(
     (
-      difference%
-      (1000*60*60)
-    )/
-    (1000*60)
+      difference%(1000*60*60)
+    )/(1000*60)
   );
-
 
   const s =
   Math.floor(
     (
-      difference%
-      (1000*60)
-    )/
-    1000
+      difference%(1000*60)
+    )/1000
   );
 
+  document.getElementById("days").textContent=d;
 
-  document
-  .getElementById(
-    "days"
-  )
-  .textContent=d;
+  document.getElementById("hours").textContent=
+    String(h).padStart(2,"0");
 
+  document.getElementById("minutes").textContent=
+    String(m).padStart(2,"0");
 
-  document
-  .getElementById(
-    "hours"
-  )
-  .textContent=
-    String(h)
-    .padStart(2,"0");
-
-
-  document
-  .getElementById(
-    "minutes"
-  )
-  .textContent=
-    String(m)
-    .padStart(2,"0");
-
-
-  document
-  .getElementById(
-    "seconds"
-  )
-  .textContent=
-    String(s)
-    .padStart(2,"0");
+  document.getElementById("seconds").textContent=
+    String(s).padStart(2,"0");
 
 }
 
 timer();
 
-setInterval(
-  timer,
-  1000
-);
+setInterval(timer,1000);
 
 
-/* =========================
-   RSVP
-========================= */
+/* RSVP + WHATSAPP */
 
-function selectAnswer(
-  button,
-  text
-){
+let selectedAnswer = "";
+
+function selectAnswer(button,text){
+
+  selectedAnswer = text;
 
   document
-  .querySelectorAll(
-    ".rsvp-button"
-  )
+  .querySelectorAll(".rsvp-button")
   .forEach(btn=>{
-
-    btn
-    .classList
-    .remove("active");
-
+    btn.classList.remove("active");
   });
 
-
-  button
-  .classList
-  .add("active");
-
+  button.classList.add("active");
 
   document
-  .getElementById(
-    "answer"
-  )
+  .getElementById("answer")
   .innerHTML=
     "Таңдауыңыз: <b>"+
     text+
     "</b> ♥";
+
+}
+
+function sendWhatsApp(){
+
+  const name =
+  document
+  .getElementById("guestName")
+  .value
+  .trim();
+
+  if(!name){
+
+    alert("Аты-жөніңізді жазыңыз");
+
+    return;
+  }
+
+  if(!selectedAnswer){
+
+    alert("Келесіз бе деген жауапты таңдаңыз");
+
+    return;
+  }
+
+  const phone = "77020380892";
+
+  const message =
+    "Малика қыз ұзату тойы\n\n" +
+    "Қонақ: " + name + "\n" +
+    "Жауабы: " + selectedAnswer;
+
+  const url =
+    "https://wa.me/" +
+    phone +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(url,"_blank");
 
 }
 
