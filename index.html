@@ -42,19 +42,15 @@ body{
   font-family:'Cormorant Garamond',serif;
 }
 
-/* ==============================
-   OPEN SCREEN
-============================== */
+/* OPEN SCREEN */
 
 .open-screen{
   position:fixed;
   inset:0;
   z-index:9999;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   padding:28px;
 
   background:
@@ -114,24 +110,18 @@ body{
 .open-btn{
   margin-top:45px;
   padding:17px 30px;
-
   border:1px solid rgba(255,255,255,.7);
   border-radius:40px;
-
   background:rgba(255,255,255,.14);
   backdrop-filter:blur(8px);
-
   color:white;
   font-family:'Montserrat',sans-serif;
   font-size:10px;
   letter-spacing:3px;
-
   cursor:pointer;
 }
 
-/* ==============================
-   MUSIC
-============================== */
+/* MUSIC */
 
 .music-btn{
   position:fixed;
@@ -150,21 +140,20 @@ body{
 
   font-size:20px;
 
-  box-shadow:
-    0 8px 25px rgba(60,30,20,.22);
+  box-shadow:0 8px 25px rgba(60,30,20,.22);
 
   display:flex;
   align-items:center;
   justify-content:center;
+
+  cursor:pointer;
 }
 
 .music-btn.playing{
   animation:musicPulse 1.8s ease-in-out infinite;
 }
 
-/* ==============================
-   GENERAL
-============================== */
+/* GENERAL */
 
 .section{
   position:relative;
@@ -174,9 +163,7 @@ body{
 .reveal{
   opacity:0;
   transform:translateY(45px);
-  transition:
-    opacity 1.15s ease,
-    transform 1.15s ease;
+  transition:opacity 1.15s ease, transform 1.15s ease;
 }
 
 .reveal.show{
@@ -187,9 +174,7 @@ body{
 .reveal-left{
   opacity:0;
   transform:translateX(-45px);
-  transition:
-    opacity 1.15s ease,
-    transform 1.15s ease;
+  transition:opacity 1.15s ease, transform 1.15s ease;
 }
 
 .reveal-left.show{
@@ -200,9 +185,7 @@ body{
 .reveal-right{
   opacity:0;
   transform:translateX(45px);
-  transition:
-    opacity 1.15s ease,
-    transform 1.15s ease;
+  transition:opacity 1.15s ease, transform 1.15s ease;
 }
 
 .reveal-right.show{
@@ -210,9 +193,7 @@ body{
   transform:translateX(0);
 }
 
-/* ==============================
-   HERO
-============================== */
+/* HERO */
 
 .hero{
   min-height:100svh;
@@ -281,8 +262,7 @@ body{
   filter:blur(12px);
   transform:scale(.78);
 
-  text-shadow:
-    0 4px 20px rgba(0,0,0,.35);
+  text-shadow:0 4px 20px rgba(0,0,0,.35);
 
   animation:
     nameReveal 2s cubic-bezier(.2,.8,.2,1)
@@ -292,11 +272,8 @@ body{
 .hero-line{
   width:0;
   height:1px;
-
   margin:0 auto 25px;
-
   background:white;
-
   animation:lineOpen 1.4s ease forwards 2s;
 }
 
@@ -313,15 +290,12 @@ body{
 .hero-scroll{
   position:absolute;
   z-index:4;
-
   bottom:28px;
   left:50%;
   transform:translateX(-50%);
-
   font-family:'Montserrat',sans-serif;
   font-size:8px;
   letter-spacing:3px;
-
   opacity:.9;
 }
 
@@ -331,9 +305,7 @@ body{
   animation:bounce 1.5s infinite;
 }
 
-/* ==============================
-   INVITATION
-============================== */
+/* INVITATION */
 
 .invitation{
   min-height:100svh;
@@ -351,11 +323,8 @@ body{
 .photo-card{
   width:min(88%,560px);
   margin:0 auto;
-
   position:relative;
-
-  box-shadow:
-    0 25px 55px rgba(77,47,34,.15);
+  box-shadow:0 25px 55px rgba(77,47,34,.15);
 }
 
 .photo-card img{
@@ -371,17 +340,13 @@ body{
   z-index:2;
 
   width:min(92%,590px);
-
   margin:-80px auto 0;
-
   padding:80px 25px 75px;
 
   background:var(--paper);
-
   text-align:center;
 
-  box-shadow:
-    0 20px 50px rgba(70,40,25,.12);
+  box-shadow:0 20px 50px rgba(70,40,25,.12);
 
   clip-path:polygon(
     0 4%,6% 2%,12% 4%,18% 1%,25% 3%,32% 1%,39% 3%,
@@ -391,22 +356,6 @@ body{
   );
 }
 
-.paper-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 4px,
-      rgba(80,50,30,.018) 5px
-    );
-
-  pointer-events:none;
-}
-
 .small-ornament{
   color:var(--gold);
   font-size:28px;
@@ -414,12 +363,9 @@ body{
 }
 
 .inv-title{
-  font-family:'Cormorant Garamond',serif;
-
   font-size:30px;
   font-weight:500;
   letter-spacing:2px;
-
   margin-bottom:28px;
 }
 
@@ -430,40 +376,17 @@ body{
 
 .inv-name{
   display:block;
-
   font-family:'Great Vibes',cursive;
   font-size:67px;
   line-height:1;
-
   color:#8a493d;
-
   margin:12px 0;
 }
 
-/* ==============================
-   DIVIDER
-============================== */
-
-.torn-divider{
-  height:55px;
-
-  background:
-    linear-gradient(
-      135deg,
-      transparent 15px,
-      var(--wine) 0
-    ) 0 0/30px 30px repeat-x;
-
-  opacity:.98;
-}
-
-/* ==============================
-   LOCATION
-============================== */
+/* LOCATION */
 
 .location{
   min-height:95svh;
-
   padding:90px 25px;
 
   display:flex;
@@ -471,7 +394,6 @@ body{
   justify-content:center;
 
   text-align:center;
-
   color:white;
 
   background:
@@ -501,16 +423,13 @@ body{
 
 .location-city{
   font-size:47px;
-  font-weight:400;
 }
 
 .location-place{
   font-family:'Great Vibes',cursive;
   font-size:78px;
   line-height:1;
-
   margin-top:12px;
-
   color:#e6c2a7;
 }
 
@@ -539,13 +458,10 @@ body{
   letter-spacing:2px;
 }
 
-/* ==============================
-   CALENDAR
-============================== */
+/* CALENDAR */
 
 .calendar-section{
   min-height:100svh;
-
   padding:90px 18px;
 
   background:
@@ -572,10 +488,7 @@ body{
 
 .calendar-title{
   margin:14px 0 35px;
-
-  font-family:'Cormorant Garamond',serif;
   font-style:italic;
-
   font-size:56px;
   font-weight:500;
 }
@@ -583,23 +496,16 @@ body{
 .calendar-box{
   width:min(100%,400px);
   margin:auto;
-
   overflow:hidden;
-
   border-radius:29px;
-
   background:#fffaf4;
-
-  box-shadow:
-    0 24px 55px rgba(70,40,30,.15);
+  box-shadow:0 24px 55px rgba(70,40,30,.15);
 }
 
 .calendar-head{
   padding:23px 15px 20px;
-
   background:#7c3932;
   color:white;
-
   display:flex;
   justify-content:center;
   align-items:baseline;
@@ -624,7 +530,6 @@ body{
 
 .week{
   padding:18px 12px 8px;
-
   font-family:'Montserrat',sans-serif;
   font-size:8px;
   opacity:.42;
@@ -637,13 +542,10 @@ body{
 
 .day{
   height:44px;
-
   position:relative;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   font-size:21px;
 }
 
@@ -658,15 +560,11 @@ body{
 
 .day14 .heart{
   position:absolute;
-
   left:50%;
   top:-9px;
-
   transform:translateX(-50%);
-
   color:#b72f3d;
   font-size:18px;
-
   animation:heartBeat 1s ease-in-out infinite;
 }
 
@@ -680,14 +578,11 @@ body{
   font-size:31px;
 }
 
-/* ==============================
-   TIMER
-============================== */
+/* TIMER */
 
 .timer-title{
   margin-top:48px;
   margin-bottom:18px;
-
   font-family:'Montserrat',sans-serif;
   font-size:9px;
   letter-spacing:5px;
@@ -704,12 +599,9 @@ body{
 
 .timer-box{
   padding:18px 4px;
-
   background:rgba(255,255,255,.38);
-
   border:1px solid rgba(255,255,255,.58);
   border-radius:17px;
-
   backdrop-filter:blur(8px);
 }
 
@@ -721,18 +613,14 @@ body{
 .timer-text{
   display:block;
   margin-top:5px;
-
   font-family:'Montserrat',sans-serif;
   font-size:7px;
 }
 
-/* ==============================
-   RSVP
-============================== */
+/* RSVP */
 
 .rsvp{
   min-height:100svh;
-
   padding:90px 25px;
 
   display:flex;
@@ -740,7 +628,6 @@ body{
   align-items:center;
 
   background:#f5f1ec;
-
   text-align:center;
 }
 
@@ -759,14 +646,12 @@ body{
   font-size:31px;
   font-weight:400;
   letter-spacing:2px;
-
   margin-bottom:35px;
 }
 
 .rsvp-info{
   font-size:21px;
   line-height:1.4;
-
   margin-bottom:25px;
   color:#8d755f;
 }
@@ -787,7 +672,6 @@ body{
 
   outline:none;
   text-align:center;
-
   margin-bottom:26px;
 }
 
@@ -797,13 +681,8 @@ body{
 
 .rsvp-question{
   text-align:left;
-
   font-size:24px;
-
-  margin:
-    5px
-    0
-    18px;
+  margin:5px 0 18px;
 }
 
 .choice{
@@ -812,7 +691,6 @@ body{
   gap:15px;
 
   width:100%;
-
   padding:14px 10px;
 
   border:none;
@@ -829,12 +707,9 @@ body{
 .radio{
   width:34px;
   height:34px;
-
   flex:none;
-
   border:2px solid #bba58f;
   border-radius:50%;
-
   position:relative;
 }
 
@@ -844,22 +719,18 @@ body{
 
 .choice.active .radio::after{
   content:"";
-
   position:absolute;
   inset:6px;
-
   background:var(--gold);
   border-radius:50%;
 }
 
 .send-btn{
   width:65%;
-
   margin-top:26px;
   padding:17px 20px;
 
   border:none;
-
   background:var(--gold);
   color:white;
 
@@ -874,9 +745,7 @@ body{
   font-size:20px;
 }
 
-/* ==============================
-   FINAL
-============================== */
+/* FINAL */
 
 .final{
   min-height:100svh;
@@ -904,15 +773,10 @@ body{
 
 .final-card{
   width:min(100%,540px);
-
   padding:55px 25px;
-
   border-radius:30px;
-
   background:rgba(55,30,25,.43);
-
   backdrop-filter:blur(5px);
-
   border:1px solid rgba(255,255,255,.25);
 }
 
@@ -926,7 +790,6 @@ body{
   font-family:'Great Vibes',cursive;
   font-size:62px;
   font-weight:400;
-
   margin:22px 0;
 }
 
@@ -937,21 +800,16 @@ body{
 
 .final-text{
   margin-top:30px;
-
   font-size:22px;
   line-height:1.5;
 }
 
-/* ==============================
-   FOOTER
-============================== */
+/* FOOTER */
 
 .footer{
   padding:55px 20px;
-
   background:#171312;
   color:white;
-
   text-align:center;
 }
 
@@ -962,17 +820,13 @@ body{
 
 .footer-top{
   margin-top:25px;
-
   font-family:'Montserrat',sans-serif;
   font-size:9px;
   letter-spacing:3px;
-
   cursor:pointer;
 }
 
-/* ==============================
-   ANIMATIONS
-============================== */
+/* ANIMATIONS */
 
 @keyframes fadeUp{
   to{
@@ -1046,7 +900,6 @@ body{
   .rsvp-script{
     font-size:58px;
   }
-
 }
 
 </style>
@@ -1054,15 +907,9 @@ body{
 
 <body>
 
+<!-- OPEN SCREEN -->
 
-<!-- ==============================
-     OPEN
-============================== -->
-
-<div
-  id="openScreen"
-  class="open-screen"
->
+<div id="openScreen" class="open-screen">
 
   <div class="open-inner">
 
@@ -1082,6 +929,7 @@ body{
 
     <button
       class="open-btn"
+      type="button"
       onclick="openInvitation()"
     >
       ШАҚЫРУДЫ АШУ · 🎵
@@ -1098,27 +946,25 @@ body{
   id="bgMusic"
   loop
   preload="auto"
+  playsinline
 >
-
   <source
-    src="Той Жыры - Alem Band.mp3"
+    src="./music.mp3"
     type="audio/mpeg"
   >
-
 </audio>
 
 <button
   id="musicBtn"
   class="music-btn"
+  type="button"
   onclick="toggleMusic()"
 >
   ♪
 </button>
 
 
-<!-- ==============================
-     HERO
-============================== -->
+<!-- HERO -->
 
 <section class="hero section">
 
@@ -1141,33 +987,20 @@ body{
   </div>
 
   <div class="hero-scroll">
-
     ТӨМЕН СЫРҒЫТЫҢЫЗ
-
-    <div class="hero-arrow">
-      ↓
-    </div>
-
+    <div class="hero-arrow">↓</div>
   </div>
 
 </section>
 
 
-<!-- ==============================
-     INVITATION
-============================== -->
+<!-- INVITATION -->
 
 <section class="invitation section">
 
   <div class="photo-card reveal-right">
-
-    <img
-      src="IMG_1876.jpeg"
-      alt="Сәукеле"
-    >
-
+    <img src="IMG_1876.jpeg" alt="Сәукеле">
   </div>
-
 
   <div class="paper-card reveal">
 
@@ -1176,9 +1009,7 @@ body{
     </div>
 
     <h2 class="inv-title">
-
       ҚҰРМЕТТІ ҚОНАҚТАР!
-
     </h2>
 
     <div class="inv-text">
@@ -1201,9 +1032,7 @@ body{
 </section>
 
 
-<!-- ==============================
-     LOCATION
-============================== -->
+<!-- LOCATION -->
 
 <section class="location section">
 
@@ -1238,9 +1067,7 @@ body{
 </section>
 
 
-<!-- ==============================
-     CALENDAR
-============================== -->
+<!-- CALENDAR -->
 
 <section class="calendar-section section">
 
@@ -1253,7 +1080,6 @@ body{
     <h2 class="calendar-title">
       Той күні
     </h2>
-
 
     <div class="calendar-box">
 
@@ -1269,9 +1095,7 @@ body{
 
       </div>
 
-
       <div class="week">
-
         <div>ДС</div>
         <div>СС</div>
         <div>СР</div>
@@ -1279,9 +1103,7 @@ body{
         <div>ЖМ</div>
         <div>СБ</div>
         <div>ЖС</div>
-
       </div>
-
 
       <div class="days-grid">
 
@@ -1302,19 +1124,10 @@ body{
         <div class="day">12</div>
         <div class="day">13</div>
 
-
         <div class="day day14">
-
-          <span class="heart">
-            ♥
-          </span>
-
-          <span class="num">
-            14
-          </span>
-
+          <span class="heart">♥</span>
+          <span class="num">14</span>
         </div>
-
 
         <div class="day">15</div>
         <div class="day">16</div>
@@ -1339,80 +1152,34 @@ body{
 
     </div>
 
-
     <div class="full-date">
       14 қыркүйек 2026 жыл
     </div>
-
 
     <div class="timer-title">
       ТОЙ САЛТАНАТЫНА ДЕЙІН
     </div>
 
-
     <div class="timer">
 
       <div class="timer-box">
-
-        <span
-          id="days"
-          class="timer-number"
-        >
-          00
-        </span>
-
-        <span class="timer-text">
-          КҮН
-        </span>
-
+        <span id="days" class="timer-number">00</span>
+        <span class="timer-text">КҮН</span>
       </div>
 
-
       <div class="timer-box">
-
-        <span
-          id="hours"
-          class="timer-number"
-        >
-          00
-        </span>
-
-        <span class="timer-text">
-          САҒАТ
-        </span>
-
+        <span id="hours" class="timer-number">00</span>
+        <span class="timer-text">САҒАТ</span>
       </div>
 
-
       <div class="timer-box">
-
-        <span
-          id="minutes"
-          class="timer-number"
-        >
-          00
-        </span>
-
-        <span class="timer-text">
-          МИНУТ
-        </span>
-
+        <span id="minutes" class="timer-number">00</span>
+        <span class="timer-text">МИНУТ</span>
       </div>
 
-
       <div class="timer-box">
-
-        <span
-          id="seconds"
-          class="timer-number"
-        >
-          00
-        </span>
-
-        <span class="timer-text">
-          СЕКУНД
-        </span>
-
+        <span id="seconds" class="timer-number">00</span>
+        <span class="timer-text">СЕКУНД</span>
       </div>
 
     </div>
@@ -1422,9 +1189,7 @@ body{
 </section>
 
 
-<!-- ==============================
-     RSVP
-============================== -->
+<!-- RSVP -->
 
 <section class="rsvp section">
 
@@ -1435,19 +1200,15 @@ body{
     </div>
 
     <div class="rsvp-title">
-
       ТОЙҒА КЕЛУІҢІЗДІ
       РАСТАУЫҢЫЗДЫ СҰРАЙМЫЗ
-
     </div>
 
     <div class="rsvp-info">
-
       Аты-жөніңіз
       <br>
       (жұбайыңызбен келетін болсаңыз,
       екеуіңіздің де атыңызды жазыңыз)
-
     </div>
 
     <input
@@ -1457,48 +1218,33 @@ body{
       placeholder="Аты-жөніңіз"
     >
 
-
     <div class="rsvp-question">
       Тойға келе аласыз ба?
     </div>
-
 
     <button
       class="choice"
       onclick="selectChoice(this,'Иә, әрине')"
     >
-
       <span class="radio"></span>
-
       Иә, әрине
-
     </button>
-
 
     <button
       class="choice"
       onclick="selectChoice(this,'Жұбайыммен келемін')"
     >
-
       <span class="radio"></span>
-
       Жұбайыммен келемін
-
     </button>
-
 
     <button
       class="choice"
       onclick="selectChoice(this,'Өкінішке орай, келе алмаймын')"
     >
-
       <span class="radio"></span>
-
-      Өкінішке орай,
-      келе алмаймын
-
+      Өкінішке орай, келе алмаймын
     </button>
-
 
     <button
       class="send-btn"
@@ -1507,20 +1253,14 @@ body{
       ЖІБЕРУ
     </button>
 
-
-    <div
-      id="answer"
-      class="answer"
-    ></div>
+    <div id="answer" class="answer"></div>
 
   </div>
 
 </section>
 
 
-<!-- ==============================
-     FINAL
-============================== -->
+<!-- FINAL -->
 
 <section class="final section">
 
@@ -1535,20 +1275,16 @@ body{
     </div>
 
     <div class="parents">
-
       Марат
       <br>
       &
       <br>
       Сандуғаш
-
     </div>
 
     <div class="final-text">
-
       Қадірлі қонағымыз болып,
       қуанышымызға ортақ болыңыздар!
-
     </div>
 
   </div>
@@ -1576,86 +1312,100 @@ body{
 
 <script>
 
-/* ==============================
-   OPEN + MUSIC
-============================== */
+/* MUSIC */
 
-const openScreen =
-document.getElementById("openScreen");
-
-const music =
-document.getElementById("bgMusic");
-
-const musicBtn =
-document.getElementById("musicBtn");
+const openScreen = document.getElementById("openScreen");
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
 
 let musicPlaying = false;
 
 music.volume = 0.65;
 
 
-function openInvitation(){
+/* ШАҚЫРУДЫ АШҚАНДА МУЗЫКА ҚОСЫЛАДЫ */
 
-  openScreen.classList.add("hide");
+async function openInvitation(){
 
-  music.play()
-  .then(()=>{
+  try{
+
+    music.currentTime = 0;
+
+    await music.play();
 
     musicPlaying = true;
 
-    musicBtn
-    .classList
-    .add("playing");
-
+    musicBtn.classList.add("playing");
     musicBtn.innerHTML = "♫";
 
-  })
-  .catch(()=>{
+  }catch(error){
+
+    console.log("Музыка қосылмады:", error);
 
     musicPlaying = false;
+    musicBtn.innerHTML = "♪";
 
-  });
+  }
 
+  openScreen.classList.add("hide");
 }
 
 
-function toggleMusic(){
+/* МУЗЫКА БАТЫРМАСЫ */
 
-  if(musicPlaying){
+async function toggleMusic(){
+
+  if(!music.paused){
 
     music.pause();
 
     musicPlaying = false;
 
-    musicBtn
-    .classList
-    .remove("playing");
-
+    musicBtn.classList.remove("playing");
     musicBtn.innerHTML = "♪";
 
   }else{
 
-    music.play()
-    .then(()=>{
+    try{
+
+      await music.play();
 
       musicPlaying = true;
 
-      musicBtn
-      .classList
-      .add("playing");
-
+      musicBtn.classList.add("playing");
       musicBtn.innerHTML = "♫";
 
-    });
+    }catch(error){
+
+      console.log("Музыка қатесі:", error);
+
+    }
 
   }
 
 }
 
 
-/* ==============================
-   REVEAL
-============================== */
+/* Егер ән аяқталмай жатып браузер күйді өзгертсе */
+
+music.addEventListener("play", function(){
+
+  musicPlaying = true;
+  musicBtn.classList.add("playing");
+  musicBtn.innerHTML = "♫";
+
+});
+
+music.addEventListener("pause", function(){
+
+  musicPlaying = false;
+  musicBtn.classList.remove("playing");
+  musicBtn.innerHTML = "♪";
+
+});
+
+
+/* REVEAL */
 
 const revealItems =
 document.querySelectorAll(
@@ -1689,9 +1439,7 @@ revealItems.forEach(item=>{
 });
 
 
-/* ==============================
-   TIMER
-============================== */
+/* TIMER */
 
 const eventTime =
 new Date(
@@ -1701,12 +1449,8 @@ new Date(
 
 function updateTimer(){
 
-  const now =
-  new Date().getTime();
-
-  const distance =
-  eventTime - now;
-
+  const now = new Date().getTime();
+  const distance = eventTime - now;
 
   if(distance <= 0){
 
@@ -1716,9 +1460,7 @@ function updateTimer(){
     "<div style='grid-column:1/5;font-size:30px;'>Той күні келді ♥</div>";
 
     return;
-
   }
-
 
   const d =
   Math.floor(
@@ -1727,75 +1469,51 @@ function updateTimer(){
 
   const h =
   Math.floor(
-    (
-      distance%(1000*60*60*24)
-    )/(1000*60*60)
+    (distance%(1000*60*60*24))/(1000*60*60)
   );
 
   const m =
   Math.floor(
-    (
-      distance%(1000*60*60)
-    )/(1000*60)
+    (distance%(1000*60*60))/(1000*60)
   );
 
   const s =
   Math.floor(
-    (
-      distance%(1000*60)
-    )/1000
+    (distance%(1000*60))/1000
   );
 
+  document.getElementById("days").textContent = d;
 
-  document.getElementById("days")
-  .textContent = d;
-
-  document.getElementById("hours")
-  .textContent =
+  document.getElementById("hours").textContent =
   String(h).padStart(2,"0");
 
-  document.getElementById("minutes")
-  .textContent =
+  document.getElementById("minutes").textContent =
   String(m).padStart(2,"0");
 
-  document.getElementById("seconds")
-  .textContent =
+  document.getElementById("seconds").textContent =
   String(s).padStart(2,"0");
-
 }
 
 updateTimer();
 
-setInterval(
-  updateTimer,
-  1000
-);
+setInterval(updateTimer,1000);
 
 
-/* ==============================
-   RSVP
-============================== */
+/* RSVP */
 
 let selectedChoice = "";
 
-
-function selectChoice(
-  button,
-  answer
-){
+function selectChoice(button,answer){
 
   selectedChoice = answer;
 
   document
   .querySelectorAll(".choice")
   .forEach(btn=>{
-
     btn.classList.remove("active");
-
   });
 
   button.classList.add("active");
-
 }
 
 
@@ -1807,41 +1525,24 @@ function sendWhatsApp(){
   .value
   .trim();
 
-
   if(!guestName){
 
-    alert(
-      "Аты-жөніңізді жазыңыз"
-    );
-
+    alert("Аты-жөніңізді жазыңыз");
     return;
-
   }
-
 
   if(!selectedChoice){
 
-    alert(
-      "Тойға қатысу жауабын таңдаңыз"
-    );
-
+    alert("Тойға қатысу жауабын таңдаңыз");
     return;
-
   }
 
-
-  const phone =
-  "77020380892";
-
+  const phone = "77020380892";
 
   const message =
   "Малика қыз ұзату тойы\n\n"+
-  "Қонақ: "+
-  guestName+
-  "\n"+
-  "Жауабы: "+
-  selectedChoice;
-
+  "Қонақ: "+guestName+"\n"+
+  "Жауабы: "+selectedChoice;
 
   const whatsapp =
   "https://wa.me/"+
@@ -1849,12 +1550,7 @@ function sendWhatsApp(){
   "?text="+
   encodeURIComponent(message);
 
-
-  window.open(
-    whatsapp,
-    "_blank"
-  );
-
+  window.open(whatsapp,"_blank");
 }
 
 </script>
